@@ -4,40 +4,31 @@ import static com.example.myapp.CalendarUtils.daysInWeekArray;
 import static com.example.myapp.CalendarUtils.monthYearFromDate;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.os.Build;
-import android.os.Bundle;
-
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 
-
-public class WeekViewActivity extends AppCompatActivity implements CalendarAdapter.OnItemListener
-{
+public class WeekViewActivity extends AppCompatActivity implements CalendarAdapter.OnItemListener{
     private TextView monthYearText;
     private RecyclerView calendarRecyclerView;
     private ListView eventListView;
-
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_week_view);
         initWidgets();
         setWeekView();
     }
-
     private void initWidgets()
     {
         calendarRecyclerView = findViewById(R.id.calendarRecyclerView);
@@ -58,29 +49,22 @@ public class WeekViewActivity extends AppCompatActivity implements CalendarAdapt
     }
 
 
-    public void previousWeekAction(View view)
-    {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            CalendarUtils.selectedDate = CalendarUtils.selectedDate.minusWeeks(1);
-        }
-        setWeekView();
-    }
 
-    public void nextWeekAction(View view)
-    {
+
+    public void nextWeekAction(View view) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             CalendarUtils.selectedDate = CalendarUtils.selectedDate.plusWeeks(1);
         }
         setWeekView();
     }
 
-
-    @Override
-    public void onItemClick(int position, LocalDate date)
-    {
-        CalendarUtils.selectedDate = date;
+    public void previousWeekAction(View view) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            CalendarUtils.selectedDate = CalendarUtils.selectedDate.minusWeeks(1);
+        }
         setWeekView();
     }
+
 
     @Override
     protected void onResume()
@@ -99,5 +83,10 @@ public class WeekViewActivity extends AppCompatActivity implements CalendarAdapt
     public void newEventAction(View view)
     {
         startActivity(new Intent(this, EventEditActivity.class));
+    }
+
+    @Override
+    public void onItemClick(int position, LocalDate date) {
+
     }
 }
