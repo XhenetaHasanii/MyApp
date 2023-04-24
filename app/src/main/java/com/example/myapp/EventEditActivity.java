@@ -35,6 +35,7 @@ public class EventEditActivity extends AppCompatActivity
         eventNameET = findViewById(R.id.eventNameET);
         eventDateTV = findViewById(R.id.eventDateTV);
         eventTimeTV = findViewById(R.id.eventTimeTV);
+        
     }
 
     public void saveEventAction(View view)
