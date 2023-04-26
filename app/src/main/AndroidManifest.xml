@@ -12,11 +12,14 @@
         <activity
             android:name=".MainActivity2"
             android:exported="false" />
-       <!-- <activity
+        <!--
+ <activity
             android:name=".MainActivityLogin"
-            android:exported="false" />-->
+            android:exported="false" />
+        -->
         <activity android:name=".EventEditActivity" />
         <activity android:name=".WeekViewActivity" />
+        <activity android:name=".MainActivity" />
         <activity
             android:name=".MainActivityLogin"
             android:exported="true">
