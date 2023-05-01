@@ -34,7 +34,7 @@
         android:background="@drawable/btn_background_2"
         android:layout_margin="13dp"
         android:padding="15dp"
-        android:hint="Username"
+        android:hint="Email"
         android:textColor="@color/white"
         android:textColorHint="@color/black"
         android:textSize="20dp"
@@ -48,7 +48,6 @@
         android:id="@+id/password"
         android:layout_below="@+id/username"
         android:layout_margin="13dp"
-        android:background="@color/white"
         android:hint="Password"
         android:padding="15dp"
         android:textColor="@color/white"
@@ -56,6 +55,7 @@
         android:textSize="20dp"
         android:drawableLeft="@drawable/baseline_info_24"
         android:drawablePadding="18dp"
+        android:background="@drawable/btn_background_2"
         />
     <Button
         android:layout_width="wrap_content"
@@ -63,47 +63,13 @@
         android:id="@+id/loginBtn"
         android:text="login"
         android:layout_below="@id/password"
-        android:layout_margin="13dp"
         android:layout_centerHorizontal="true"
         android:padding="15dp"
         android:textSize="15dp"
         android:textColor="@color/white"
-        android:backgroundTint="@color/design_default_color_on_secondary"
+        android:background="@drawable/btn_background_1"
         android:onClick="openActivity1"
         />
-
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/loginBtn"
-        android:id="@+id/forgotPassword"
-        android:text="Forgot password"
-        android:gravity="center"
-        android:textSize="20dp"
-        android:textStyle="normal"
-        android:layout_margin="20dp"
-        />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="or sign in "
-        android:id="@+id/others"
-        android:layout_below="@id/forgotPassword"
-        android:gravity="center"
-        android:textSize="20dp"
-        android:textStyle="normal"
-        android:layout_margin="12dp"
-        />
-
-        <ImageView
-            android:id="@+id/email"
-            android:layout_below="@id/others"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:src="@drawable/email"
-            android:layout_margin="15dp"
-            android:layout_centerHorizontal="true"/>
 
 
 </RelativeLayout>

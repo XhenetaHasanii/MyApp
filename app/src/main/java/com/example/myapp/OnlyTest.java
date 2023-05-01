@@ -30,7 +30,7 @@ public class OnlyTest extends AppCompatActivity {
 
     }
     public void backToLogin(){
-        Intent intent=new Intent(this,MainActivityLogin.class);
+        Intent intent=new Intent(this,MainActivityButton.class);
         startActivity(intent);
     }
 }
