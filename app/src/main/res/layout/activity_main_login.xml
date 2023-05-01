@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/username"
         android:layout_below="@id/signin"
-        android:background="@color/white"
+        android:background="@drawable/btn_background_2"
         android:layout_margin="13dp"
         android:padding="15dp"
         android:hint="Username"
@@ -69,6 +69,7 @@
         android:textSize="15dp"
         android:textColor="@color/white"
         android:backgroundTint="@color/design_default_color_on_secondary"
+        android:onClick="openActivity1"
         />
 
 
@@ -94,149 +95,15 @@
         android:textStyle="normal"
         android:layout_margin="12dp"
         />
-    <Button
-           android:layout_below="@id/socialicons"
-           android:id="@+id/button"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:text="OpenActivity1"
-           android:onClick="openActivity1"
-
-        />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/socialicons"
-        android:layout_alignParentBottom="true"
-        android:gravity="center">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         <ImageView
+            android:id="@+id/email"
+            android:layout_below="@id/others"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:src="@drawable/email"
-            android:layout_margin="15dp"/>
-
-
-        <!--<Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="OpenActivity1"
-            android:onClick="openActivity1"
-            android:layout_below=""
-            />-->
-    </LinearLayout>
+            android:layout_margin="15dp"
+            android:layout_centerHorizontal="true"/>
 
 
 </RelativeLayout>

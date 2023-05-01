@@ -10,10 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApp">
         <activity
-            android:name=".OnlyTest"
+            android:name=".MainActivityButton"
             android:exported="false" />
         <activity
-            android:name=".MainActivity2"
+            android:name=".OnlyTest"
             android:exported="false" />
         <!--
  <activity

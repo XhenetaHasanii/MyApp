@@ -28,30 +28,18 @@ public class MainActivityLogin extends AppCompatActivity {
         TextView username = (TextView) findViewById(R.id.username);
         TextView password = (TextView) findViewById(R.id.password);
         Button loginBtn = (Button) findViewById(R.id.loginBtn);
-        Button button=(Button)findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openActivity1();
-            }
-        });
-
+        Button button=(Button)findViewById(R.id.loginBtn);
 
         loginBtn.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v){
-                if (username.getText().toString().equals("admin") && password.getText().toString().equals("admin")) {
-                    Toast.makeText(MainActivityLogin.this, "LOGIN SUCCESSFULL", Toast.LENGTH_SHORT).show();
-                }
-                else {
-                    Toast.makeText(MainActivityLogin.this,"LOGIN FAILED",Toast.LENGTH_SHORT).show();
-                }
-            }});
-    }
 
-    public void openActivity1() {
-        Intent intent=new Intent(this,MainActivity2.class);
-        startActivity(intent);
-    }
-}
+                openActivity1();
+    }});};
+        public void openActivity1(){
+            Intent intent=new Intent(this,MainActivityButton.class);
+            startActivity(intent);
+        }}
+
+
