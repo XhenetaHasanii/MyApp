@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApp">
         <activity
+            android:name=".CustomListView"
+            android:exported="false" />
+        <activity
+            android:name=".ListViewMain"
+            android:exported="false" />
+        <activity
+            android:name=".PaymentOfSemester"
+            android:exported="false" />
+        <activity
             android:name=".MainActivityButton"
             android:exported="false" />
         <activity

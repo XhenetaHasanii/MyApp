@@ -38,5 +38,18 @@
         android:padding="12dp"
         android:layout_margin="18dp"
         android:onClick="goToCalendar"/>
+        <Button
+            android:layout_gravity="center"
+            android:layout_below="@id/button2"
+            android:id="@+id/button3"
+            android:layout_width="120dp"
+            android:layout_height="130dp"
+            android:text="Payment of the semester"
+            android:textSize="13dp"
+            android:textColor="@color/white"
+            android:background="@drawable/btn_background_1"
+            android:padding="12dp"
+            android:layout_margin="18dp"
+            android:onClick="goToPayment"/>
     </LinearLayout>
 </RelativeLayout>
