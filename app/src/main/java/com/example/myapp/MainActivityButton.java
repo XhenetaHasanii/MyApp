@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivityButton extends AppCompatActivity {
+
     private Button button1;
     private Button button2;
     private Button button3;
@@ -47,7 +48,7 @@ public void goToCalendar(){
     Intent intent=new Intent(this,MainActivity.class);
     startActivity(intent);}
     public void goToPayment(){
-        Intent intent=new Intent(this,CustomListView.class);
+        Intent intent=new Intent(this,ListViewMain.class);
         startActivity(intent);
     }
 }
