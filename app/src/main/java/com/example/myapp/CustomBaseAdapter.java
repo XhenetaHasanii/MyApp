@@ -10,8 +10,9 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class CustomBaseAdapter extends BaseAdapter {
-    Context context;
-    String afatiIProvimeve [];
+    public String afatiIProvimeve[]={"Janar","Prill","Qershor","Shtator"};
+   public Context context;
+
     LayoutInflater inflater;
     public CustomBaseAdapter(Context ctx, String afatiIProvimeve[]) {
         this.context=ctx;
@@ -23,7 +24,12 @@ public class CustomBaseAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-         return afatiIProvimeve.length;
+
+        for (int i = 0; i < afatiIProvimeve.length; i++) {
+            System.out.println(afatiIProvimeve[i]);
+            return afatiIProvimeve.length;
+
+    }return afatiIProvimeve.length;
     }
 
     @Override
@@ -37,10 +43,11 @@ public class CustomBaseAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View view, ViewGroup viewGroup) {
+    public View getView(int i, View view, ViewGroup viewGroup) {
         view=inflater.inflate(R.layout.activity_custom_list_view,null);
-        TextView txtView=(TextView)view.findViewById(R.id.textView);
-        txtView.setText(afatiIProvimeve[position]);
+        TextView txtView=(TextView)view.findViewById(R.id.txt1);
+        if (txtView!=null){
+        txtView.setText(afatiIProvimeve[i]);}
         return view;
     }
 }
