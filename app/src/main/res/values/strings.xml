@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">MyApp</string>
+    <string-array name="afatiIProvimevee" />
+    <item name="Janar" type="string">Janar</item>
+    <item name="Prill" type="string">Prill</item>
+    <item name="Qershor" type="string">Qershor</item>
+    <item name="Shtator" type="string">Shtator</item>
 </resources>

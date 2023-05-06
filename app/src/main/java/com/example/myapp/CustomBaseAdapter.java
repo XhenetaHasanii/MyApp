@@ -4,50 +4,71 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.BaseAdapter;
+import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 public class CustomBaseAdapter extends BaseAdapter {
-    public String afatiIProvimeve[]={"Janar","Prill","Qershor","Shtator"};
-   public Context context;
+    ListViewMain listViewMain;
+    public String afatiIProvimeve[];
+    Animation animation1;
+
 
     LayoutInflater inflater;
-    public CustomBaseAdapter(Context ctx, String afatiIProvimeve[]) {
-        this.context=ctx;
+    public CustomBaseAdapter(ListViewMain listViewMain, String[] afatiIProvimeve) {
         this.afatiIProvimeve=afatiIProvimeve;
-        inflater=LayoutInflater.from(ctx);
+        this.listViewMain=listViewMain;
 
 
+
+    }
+    public static int getRandom(int max){
+        return (int)(Math.random()*max);
     }
 
     @Override
     public int getCount() {
-
-        for (int i = 0; i < afatiIProvimeve.length; i++) {
-            System.out.println(afatiIProvimeve[i]);
-            return afatiIProvimeve.length;
-
-    }return afatiIProvimeve.length;
-    }
+            return afatiIProvimeve.length;}
 
     @Override
     public Object getItem(int i) {
-        return null;
+        return i;
     }
 
     @Override
     public long getItemId(int i) {
-        return 0;
+        return i;
     }
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        view=inflater.inflate(R.layout.activity_custom_list_view,null);
-        TextView txtView=(TextView)view.findViewById(R.id.txt1);
-        if (txtView!=null){
-        txtView.setText(afatiIProvimeve[i]);}
+
+        view=LayoutInflater.from(listViewMain).inflate(R.layout.item_list,viewGroup,false);
+        animation1= AnimationUtils.loadAnimation(listViewMain,R.anim.animation1);
+        TextView txtView=(TextView)view.findViewById(R.id.textView);
+        LinearLayout ll_bg;
+        ll_bg=view.findViewById(R.id.ll_bg);
+        int number=getRandom(4);
+        if (number==1){
+            ll_bg.setBackground(ContextCompat.getDrawable(listViewMain,R.drawable.gradient_1));
+        }
+        if (number==2){
+            ll_bg.setBackground(ContextCompat.getDrawable(listViewMain,R.drawable.gradient_2));
+        }
+        if (number==3){
+            ll_bg.setBackground(ContextCompat.getDrawable(listViewMain,R.drawable.gradient_3));
+        }if (number==4){
+            ll_bg.setBackground(ContextCompat.getDrawable(listViewMain,R.drawable.gradient_4));
+        }
+        txtView.setText(afatiIProvimeve[i]);
+        txtView.setAnimation(animation1);
         return view;
+
     }
+
 }
