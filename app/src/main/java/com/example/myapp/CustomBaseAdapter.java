@@ -1,5 +1,6 @@
 package com.example.myapp;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -51,8 +52,9 @@ public class CustomBaseAdapter extends BaseAdapter {
 
         view=LayoutInflater.from(listViewMain).inflate(R.layout.activity_item_list,viewGroup,false);
         animation1= AnimationUtils.loadAnimation(listViewMain,R.anim.animation1);
-       /* TextView txtView=(TextView)view.findViewById(R.id.textView);*/
         Button button=(Button)view.findViewById(R.id.button) ;
+
+
         LinearLayout ll_bg;
         ll_bg=view.findViewById(R.id.ll_bg);
         int number=getRandom(4);
@@ -73,4 +75,6 @@ public class CustomBaseAdapter extends BaseAdapter {
 
     }
 
-}
+    }
+
+

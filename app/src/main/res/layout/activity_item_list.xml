@@ -28,7 +28,7 @@
                 android:layout_marginBottom="10dp"
                 android:textStyle="bold"
                 android:textSize="30sp"
-                android:onClick="examPeriods"/>
+                android:onClick="bllablla"/>
 
 
         </LinearLayout>
