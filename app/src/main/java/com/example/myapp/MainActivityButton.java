@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivityButton extends AppCompatActivity {
+    ///hyhy
     Dialog myDialog;
     private Button button1;
     private Button button2;
