@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -48,9 +49,10 @@ public class CustomBaseAdapter extends BaseAdapter {
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
 
-        view=LayoutInflater.from(listViewMain).inflate(R.layout.item_list,viewGroup,false);
+        view=LayoutInflater.from(listViewMain).inflate(R.layout.activity_item_list,viewGroup,false);
         animation1= AnimationUtils.loadAnimation(listViewMain,R.anim.animation1);
-        TextView txtView=(TextView)view.findViewById(R.id.textView);
+       /* TextView txtView=(TextView)view.findViewById(R.id.textView);*/
+        Button button=(Button)view.findViewById(R.id.button) ;
         LinearLayout ll_bg;
         ll_bg=view.findViewById(R.id.ll_bg);
         int number=getRandom(4);
@@ -65,8 +67,8 @@ public class CustomBaseAdapter extends BaseAdapter {
         }if (number==4){
             ll_bg.setBackground(ContextCompat.getDrawable(listViewMain,R.drawable.gradient_4));
         }
-        txtView.setText(afatiIProvimeve[i]);
-        txtView.setAnimation(animation1);
+        button.setText(afatiIProvimeve[i]);
+        button.setAnimation(animation1);
         return view;
 
     }

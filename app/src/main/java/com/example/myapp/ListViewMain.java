@@ -17,7 +17,7 @@ public class ListViewMain extends AppCompatActivity {
     ListView listView;
     Animation animation1;
     String afatiIProvimeve[]={"Janar","Prill","Qershor","Shtator"};
-    Context ctx;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

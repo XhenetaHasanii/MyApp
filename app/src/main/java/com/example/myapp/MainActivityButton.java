@@ -37,7 +37,7 @@ public class MainActivityButton extends AppCompatActivity {
             @Override
             public void onClick(View view)
             {
-                goToPayment();
+                goToExamPeriods();
             }
         });
     }
@@ -48,7 +48,7 @@ public class MainActivityButton extends AppCompatActivity {
 public void goToCalendar(){
     Intent intent=new Intent(this,MainActivity.class);
     startActivity(intent);}
-    public void goToPayment(){
+    public void goToExamPeriods(){
         Intent intent=new Intent(this,ListViewMain.class);
         startActivity(intent);
     }
