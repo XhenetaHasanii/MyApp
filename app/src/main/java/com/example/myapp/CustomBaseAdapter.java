@@ -58,7 +58,7 @@ public class CustomBaseAdapter extends BaseAdapter {
 
         view=LayoutInflater.from(listViewMain).inflate(R.layout.exam_periods,viewGroup,false);
         animation1= AnimationUtils.loadAnimation(listViewMain,R.anim.animation1);
-        Button button=(Button)view.findViewById(R.id.button) ;
+        Button button=(Button)view.findViewById(R.id.subjects);
 
 
         LinearLayout ll_bg;
@@ -79,7 +79,7 @@ public class CustomBaseAdapter extends BaseAdapter {
         button.setAnimation(animation1);
 
 
-return view;
+      return view;
 
     }
 
