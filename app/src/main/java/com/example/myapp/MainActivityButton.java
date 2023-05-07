@@ -9,8 +9,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivityButton extends AppCompatActivity {
-    ///hyhy
-    Dialog myDialog;
+
     private Button button1;
     private Button button2;
     private Button button3;
@@ -18,7 +17,6 @@ public class MainActivityButton extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        myDialog=new Dialog(this);
         setContentView(R.layout.activity_main_button);
         Button button1=(Button)findViewById(R.id.button1);
         Button button2=(Button) findViewById(R.id.button2);
@@ -51,8 +49,12 @@ public class MainActivityButton extends AppCompatActivity {
 public void goToCalendar(){
     Intent intent=new Intent(this,MainActivity.class);
     startActivity(intent);}
+
     public void goToExamPeriods(){
         Intent intent=new Intent(this,ListViewMain.class);
         startActivity(intent);
+    }
 
-}}
+
+
+}

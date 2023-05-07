@@ -16,9 +16,13 @@ import android.widget.TextView;
 import androidx.core.content.ContextCompat;
 
 public class CustomBaseAdapter extends BaseAdapter {
+
     ListViewMain listViewMain;
-    public String afatiIProvimeve[];
     Animation animation1;
+
+
+    public String afatiIProvimeve[]={"Janar","Prill","Qershor","Shtator"};
+
 
 
     LayoutInflater inflater;
@@ -35,7 +39,12 @@ public class CustomBaseAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
+
             return afatiIProvimeve.length;}
+
+
+
+
 
     @Override
     public Object getItem(int i) {
@@ -49,6 +58,7 @@ public class CustomBaseAdapter extends BaseAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
+
 
         view=LayoutInflater.from(listViewMain).inflate(R.layout.activity_item_list,viewGroup,false);
         animation1= AnimationUtils.loadAnimation(listViewMain,R.anim.animation1);
@@ -71,7 +81,9 @@ public class CustomBaseAdapter extends BaseAdapter {
         }
         button.setText(afatiIProvimeve[i]);
         button.setAnimation(animation1);
-        return view;
+
+
+return view;
 
     }
 
