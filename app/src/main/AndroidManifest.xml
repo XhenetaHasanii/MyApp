@@ -13,7 +13,7 @@
             android:name=".CustomPopMain"
             android:exported="false" />
         <activity
-            android:name=".Item_list"
+            android:name=".Item"
             android:exported="false" />
         <activity
             android:name=".ListViewMain"
