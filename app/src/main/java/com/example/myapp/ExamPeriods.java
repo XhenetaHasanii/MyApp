@@ -32,9 +32,7 @@ public class ExamPeriods extends AppCompatActivity {
         }
 
 
-    public void goToSubjects(View view) {
 
-    }
 }
 
 
