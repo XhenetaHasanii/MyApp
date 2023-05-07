@@ -3,7 +3,6 @@ package com.example.myapp;
 import static com.example.myapp.R.*;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.ButtonBarLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,7 +15,7 @@ public class OnlyTest extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(layout.activity_only_test);
+        setContentView(layout.activity_menu);
         Button button=(Button) findViewById(R.id.backToLogin);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
