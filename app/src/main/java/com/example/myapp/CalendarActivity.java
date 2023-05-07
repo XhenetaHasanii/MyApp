@@ -85,9 +85,4 @@ public class CalendarActivity extends AppCompatActivity implements CalendarAdapt
         startActivity(new Intent(this, WeekViewActivity.class));
     }
 
-
-
-    public void onItemClick(int position, String dayText) {
-
-    }
 }

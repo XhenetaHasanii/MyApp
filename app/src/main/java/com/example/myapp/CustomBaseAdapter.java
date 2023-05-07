@@ -15,13 +15,8 @@ public class CustomBaseAdapter extends BaseAdapter {
 
     ListViewMain listViewMain;
     Animation animation1;
-
-
     public String afatiIProvimeve[]={"Janar","Prill","Qershor","Shtator"};
 
-
-
-    LayoutInflater inflater;
     public CustomBaseAdapter(ListViewMain listViewMain, String[] afatiIProvimeve) {
         this.afatiIProvimeve=afatiIProvimeve;
         this.listViewMain=listViewMain;

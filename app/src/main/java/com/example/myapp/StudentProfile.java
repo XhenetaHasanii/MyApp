@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class StudentProfile extends AppCompatActivity {
-    private Button button;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +29,7 @@ public class StudentProfile extends AppCompatActivity {
 
     }
     public void backToLogin(){
-        Intent intent=new Intent(this,MainActivityLogin.class);
+        Intent intent=new Intent(this,Login.class);
         startActivity(intent);
     }
 }

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
@@ -15,8 +16,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class ListViewMain extends AppCompatActivity {
-    /*String afatiIProvimeve[]={"Janar","Prill","Qershor","Shtator"};*/
-    Dialog dialog;
     ListView listView;
     Animation animation1;
     String afatiIProvimeve[]={"Janar","Prill","Qershor","Shtator"};
@@ -27,9 +26,9 @@ public class ListViewMain extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_view_main);
         ListView listView=(ListView)findViewById(R.id.list_view);
-       /* afatiIProvimeve=getResources().getStringArray(R.array.afatiIProvimevee);*/
         animation1= AnimationUtils.loadAnimation(this,R.anim.animation1);
         CustomBaseAdapter customBaseAdapter=new CustomBaseAdapter(ListViewMain.this,afatiIProvimeve);
+
         listView.setAdapter(customBaseAdapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -38,6 +37,10 @@ public class ListViewMain extends AppCompatActivity {
             }
         });
     }
+
+
+
+
 
 
 

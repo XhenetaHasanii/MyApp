@@ -3,6 +3,7 @@ package com.example.myapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -10,7 +11,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class CustomPopMain extends AppCompatActivity {
-    Dialog dialog;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,5 +27,6 @@ public class CustomPopMain extends AppCompatActivity {
 
 }
 public void dismissPopup(){
-        /////
+    Intent intent=new Intent(this,CustomPopMain.class);
+    startActivity(intent);
 }}
