@@ -35,9 +35,9 @@ public class MainActivityLogin extends AppCompatActivity {
             @Override
             public void onClick(View v){
 
-                openActivity1();
+                login();
     }});};
-        public void openActivity1(){
+        public void login(){
             Intent intent=new Intent(this,Menu.class);
             startActivity(intent);
         }}

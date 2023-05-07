@@ -72,7 +72,7 @@
         android:textSize="15dp"
         android:textColor="@color/white"
         android:background="@drawable/btn_background_1"
-        android:onClick="openActivity1"/>
+        android:onClick="login"/>
 
 </RelativeLayout>
 
