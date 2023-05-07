@@ -30,16 +30,15 @@ public class MainActivityLogin extends AppCompatActivity {
         Button loginBtn = (Button) findViewById(R.id.loginBtn);
         Button button=(Button)findViewById(R.id.loginBtn);
 
-        loginBtn.setOnClickListener(new View.OnClickListener()
-        {
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
-
+            public void onClick(View view) {
                 login();
-    }});};
+
+            }
+        });}
         public void login(){
             Intent intent=new Intent(this,Menu.class);
             startActivity(intent);
-        }}
-
-
+        }
+        }
