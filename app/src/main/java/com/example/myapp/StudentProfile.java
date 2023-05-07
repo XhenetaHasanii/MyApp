@@ -29,7 +29,7 @@ public class StudentProfile extends AppCompatActivity {
 
     }
     public void backToLogin(){
-        Intent intent=new Intent(this,MainActivityButton.class);
+        Intent intent=new Intent(this,MainActivityLogin.class);
         startActivity(intent);
     }
 }

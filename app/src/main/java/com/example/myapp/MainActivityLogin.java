@@ -38,7 +38,7 @@ public class MainActivityLogin extends AppCompatActivity {
                 openActivity1();
     }});};
         public void openActivity1(){
-            Intent intent=new Intent(this,MainActivityButton.class);
+            Intent intent=new Intent(this,Menu.class);
             startActivity(intent);
         }}
 
