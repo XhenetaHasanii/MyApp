@@ -9,13 +9,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MenuActivity extends AppCompatActivity {
+public class StudentProfile extends AppCompatActivity {
     private Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(layout.activity_menu);
+        setContentView(layout.student_profile);
         Button button=(Button) findViewById(R.id.backToLogin);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
