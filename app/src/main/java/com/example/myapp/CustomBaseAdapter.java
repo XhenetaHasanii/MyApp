@@ -1,7 +1,5 @@
 package com.example.myapp;
 
-import android.app.Dialog;
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,8 +8,6 @@ import android.view.animation.AnimationUtils;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.ListView;
-import android.widget.TextView;
 
 import androidx.core.content.ContextCompat;
 
@@ -60,7 +56,7 @@ public class CustomBaseAdapter extends BaseAdapter {
     public View getView(int i, View view, ViewGroup viewGroup) {
 
 
-        view=LayoutInflater.from(listViewMain).inflate(R.layout.activity_item_list,viewGroup,false);
+        view=LayoutInflater.from(listViewMain).inflate(R.layout.exam_periods,viewGroup,false);
         animation1= AnimationUtils.loadAnimation(listViewMain,R.anim.animation1);
         Button button=(Button)view.findViewById(R.id.button) ;
 

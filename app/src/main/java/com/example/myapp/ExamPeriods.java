@@ -8,11 +8,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 
-public class ItemList extends AppCompatActivity {
+public class ExamPeriods extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_item_list);
+        setContentView(R.layout.exam_periods);
         Button button=(Button)findViewById(R.id.subjects);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
