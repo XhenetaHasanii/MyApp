@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class OnlyTest extends AppCompatActivity {
+public class MenuActivity extends AppCompatActivity {
     private Button button;
 
     @Override
