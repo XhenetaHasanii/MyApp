@@ -69,10 +69,11 @@
         android:layout_below="@id/password"
         android:layout_centerHorizontal="true"
         android:padding="15dp"
-        android:textSize="15dp"
+        android:textSize="20dp"
         android:textColor="@color/white"
         android:background="@drawable/btn_background_1"
-        android:onClick="login"/>
+        android:onClick="login"
+        tools:ignore="OnClick" />
 
 </RelativeLayout>
 

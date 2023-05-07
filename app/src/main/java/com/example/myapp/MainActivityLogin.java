@@ -27,7 +27,6 @@ public class MainActivityLogin extends AppCompatActivity {
 
         TextView username = (TextView) findViewById(R.id.username);
         TextView password = (TextView) findViewById(R.id.password);
-        Button loginBtn = (Button) findViewById(R.id.loginBtn);
         Button button=(Button)findViewById(R.id.loginBtn);
 
         button.setOnClickListener(new View.OnClickListener() {
