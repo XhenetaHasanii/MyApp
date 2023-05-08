@@ -19,12 +19,12 @@ public class ExamPeriods extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                goToSubjects();
+                goToSubjects(v);
 
             }});}
 
-        public void goToSubjects(){
-        Intent intent=new Intent(this,CustomPopMain.class);
+        public void goToSubjects(View view){
+        Intent intent=new Intent(this,StudentProfile.class);
         startActivity(intent);
         }
 

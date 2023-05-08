@@ -16,7 +16,7 @@ public class Menu extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_button);
+        setContentView(R.layout.menu);
         Button button1=(Button)findViewById(R.id.button1);
         Button button2=(Button) findViewById(R.id.button2);
         Button button3=(Button)findViewById(R.id.button3);
@@ -39,8 +39,8 @@ public class Menu extends AppCompatActivity {
             {
                goToExamPeriods();
             }
-        });
-    }
+        });}
+
     public void goToProfile(){
         Intent intent=new Intent(this,StudentProfile.class);
         startActivity(intent);
@@ -53,6 +53,7 @@ public void goToCalendar(){
         Intent intent=new Intent(this,ListViewMain.class);
         startActivity(intent);
     }
+
 
 
 
