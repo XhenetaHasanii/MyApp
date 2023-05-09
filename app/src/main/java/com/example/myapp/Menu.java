@@ -29,7 +29,7 @@ public class Menu extends AppCompatActivity {
         popupButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                goToExamPeriods();
+                showCustomPopup();
             }
         });
 
