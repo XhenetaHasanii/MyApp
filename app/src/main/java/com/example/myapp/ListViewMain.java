@@ -36,6 +36,31 @@ public class ListViewMain extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(),""+afatiIProvimeve[i],Toast.LENGTH_SHORT).show();
             }
         });
+        listView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showCustomPopup();
+            }
+        });}
+        private void showCustomPopup() {
+            final Dialog dialog = new Dialog(ListViewMain.this);
+            dialog.setContentView(R.layout.custom_popup);
+            dialog.setCancelable(true);
+
+            TextView textViewMessage = dialog.findViewById(R.id.textViewMessage);
+            Button buttonClose = dialog.findViewById(R.id.buttonClose);
+
+            textViewMessage.setText("This is a custom popup with text!");
+
+            buttonClose.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    dialog.dismiss();
+                }
+            });
+
+            dialog.show();
+        }
     }
 
 
@@ -44,4 +69,3 @@ public class ListViewMain extends AppCompatActivity {
 
 
 
-}
