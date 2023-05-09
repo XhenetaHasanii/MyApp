@@ -43,7 +43,7 @@ public class Menu extends AppCompatActivity {
             @Override
             public void onClick(View view)
             {
-               goToExamPeriods();
+               showCustomPopup();
             }
         });}
 
@@ -55,10 +55,10 @@ public void goToCalendar(){
     Intent intent=new Intent(this,CalendarActivity.class);
     startActivity(intent);}
 
-    public void goToExamPeriods(){
+  /*  public void goToExamPeriods(){
         Intent intent=new Intent(this,ListViewMain.class);
         startActivity(intent);
-    }
+    }*/
     private void showCustomPopup() {
         final Dialog dialog = new Dialog(Menu.this);
         dialog.setContentView(R.layout.custom_popup);
