@@ -15,21 +15,10 @@ public class ExamPeriods extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.exam_periods);
 
-      Button  button = (Button) findViewById(R.id.subjects);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                goToSubjects(v);
-
-            }});}
-
-       public void goToSubjects(View view){
-        Intent intent=new Intent(this,StudentProfile.class);
-        startActivity(intent);
-        }
 
 
 
+}
 }
 
 

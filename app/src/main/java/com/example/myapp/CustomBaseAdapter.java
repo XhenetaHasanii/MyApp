@@ -8,16 +8,17 @@ import android.view.animation.AnimationUtils;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.core.content.ContextCompat;
 
 public class CustomBaseAdapter extends BaseAdapter {
 
-    ListViewMain listViewMain;
+    ExamPeriodList listViewMain;
     Animation animation1;
     public String afatiIProvimeve[]={"Janar","Prill","Qershor","Shtator"};
 
-    public CustomBaseAdapter(ListViewMain listViewMain, String[] afatiIProvimeve) {
+    public CustomBaseAdapter(ExamPeriodList listViewMain, String[] afatiIProvimeve) {
         this.afatiIProvimeve=afatiIProvimeve;
         this.listViewMain=listViewMain;
 
@@ -53,8 +54,7 @@ public class CustomBaseAdapter extends BaseAdapter {
 
         view=LayoutInflater.from(listViewMain).inflate(R.layout.exam_periods,viewGroup,false);
         animation1= AnimationUtils.loadAnimation(listViewMain,R.anim.animation1);
-        Button button=(Button)view.findViewById(R.id.subjects);
-
+        TextView textView=(TextView)view.findViewById(R.id.subjects);
 
         LinearLayout ll_bg;
         ll_bg=view.findViewById(R.id.ll_bg);
@@ -70,8 +70,8 @@ public class CustomBaseAdapter extends BaseAdapter {
         }if (number==4){
             ll_bg.setBackground(ContextCompat.getDrawable(listViewMain,R.drawable.gradient_4));
         }
-        button.setText(afatiIProvimeve[i]);
-        button.setAnimation(animation1);
+        textView.setText(afatiIProvimeve[i]);
+        textView.setAnimation(animation1);
 
 
       return view;

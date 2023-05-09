@@ -56,7 +56,7 @@ public void goToCalendar(){
     startActivity(intent);}
 
    public void goToExamPeriods(){
-        Intent intent=new Intent(this,ListViewMain.class);
+        Intent intent=new Intent(this,ExamPeriodList.class);
         startActivity(intent);
     }
     private void showCustomPopup() {

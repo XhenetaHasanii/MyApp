@@ -13,7 +13,7 @@
             android:name=".ExamPeriods"
             android:exported="false" />
         <activity
-            android:name=".ListViewMain"
+            android:name=".ExamPeriodList"
             android:exported="false" />
         <activity
             android:name=".Menu"
