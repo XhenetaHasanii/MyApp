@@ -10,16 +10,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.time.LocalTime;
 
-public class EventEditActivity extends AppCompatActivity
-{
+public class EventEditActivity extends AppCompatActivity {
     private EditText eventNameET;
     private TextView eventDateTV, eventTimeTV;
 
     private LocalTime time;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_edit);
         initWidgets();
@@ -30,16 +28,14 @@ public class EventEditActivity extends AppCompatActivity
         eventTimeTV.setText("Time: " + CalendarUtils.formattedTime(time));
     }
 
-    private void initWidgets()
-    {
+    private void initWidgets() {
         eventNameET = findViewById(R.id.eventNameET);
         eventDateTV = findViewById(R.id.eventDateTV);
         eventTimeTV = findViewById(R.id.eventTimeTV);
-        
+
     }
 
-    public void saveEventAction(View view)
-    {
+    public void saveEventAction(View view) {
         String eventName = eventNameET.getText().toString();
         Event newEvent = new Event(eventName, CalendarUtils.selectedDate, time);
         Event.eventsList.add(newEvent);

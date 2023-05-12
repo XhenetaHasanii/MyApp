@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApp">
         <activity
+            android:name=".JanuaryPeriod"
+            android:exported="false" />
+        <activity
             android:name=".ExamPeriods"
             android:exported="false" />
         <activity

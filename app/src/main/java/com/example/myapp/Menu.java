@@ -15,9 +15,9 @@ public class Menu extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu);
-        Button button1=(Button)findViewById(R.id.button1);
-        Button button2=(Button) findViewById(R.id.button2);
-        Button button3=(Button)findViewById(R.id.button3);
+        Button button1 = (Button) findViewById(R.id.button1);
+        Button button2 = (Button) findViewById(R.id.button2);
+        Button button3 = (Button) findViewById(R.id.button3);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -41,24 +41,27 @@ public class Menu extends AppCompatActivity {
         });
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view)
-            {
-               goToExamPeriods();
+            public void onClick(View view) {
+                goToExamPeriods();
             }
-        });}
+        });
+    }
 
-    public void goToProfile(){
-        Intent intent=new Intent(this,StudentProfile.class);
-        startActivity(intent);
-}
-public void goToCalendar(){
-    Intent intent=new Intent(this,CalendarActivity.class);
-    startActivity(intent);}
-
-   public void goToExamPeriods(){
-        Intent intent=new Intent(this,ExamPeriodList.class);
+    public void goToProfile() {
+        Intent intent = new Intent(this, StudentProfile.class);
         startActivity(intent);
     }
+
+    public void goToCalendar() {
+        Intent intent = new Intent(this, CalendarActivity.class);
+        startActivity(intent);
+    }
+
+    public void goToExamPeriods() {
+        Intent intent = new Intent(this, ExamPeriodList.class);
+        startActivity(intent);
+    }
+
     private void showCustomPopup() {
         final Dialog dialog = new Dialog(Menu.this);
         dialog.setContentView(R.layout.custom_popup);
