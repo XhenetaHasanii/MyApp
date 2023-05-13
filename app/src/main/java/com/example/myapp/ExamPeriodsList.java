@@ -51,6 +51,9 @@ public class ExamPeriodsList extends AppCompatActivity {
                 else if (examPeriods.get(2).equals("Qershor")) {
                     Intent intent2=new Intent(ExamPeriodsList.this,JunePeriod.class);
                     startActivity(intent2);}
+                else if (examPeriods.get(3).equals("Shtator")) {
+                    Intent intent3=new Intent(ExamPeriodsList.this,SeptemberPeriod.class);
+                    startActivity(intent3);}
 
             }
         });
