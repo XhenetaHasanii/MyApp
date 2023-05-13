@@ -14,12 +14,12 @@ import androidx.core.content.ContextCompat;
 import java.util.ArrayList;
 
 public class CustomBaseAdapter extends BaseAdapter {
-    ArrayList<String> examPeriods;
+    String examPeriods [];
     ExamPeriodsList listViewMain;
     Animation animation1;
 
 
-    public CustomBaseAdapter(ExamPeriodsList listViewMain, ArrayList<String> examPeriods) {
+    public CustomBaseAdapter(ExamPeriodsList listViewMain, String examPeriods[]) {
 
         this.listViewMain = listViewMain;
         this.examPeriods = examPeriods;
@@ -35,7 +35,7 @@ public class CustomBaseAdapter extends BaseAdapter {
     @Override
     public int getCount() {
 
-        return examPeriods.size();
+        return examPeriods.length;
     }
 
 
@@ -72,7 +72,7 @@ public class CustomBaseAdapter extends BaseAdapter {
         if (number == 5) {
             ll_bg.setBackground(ContextCompat.getDrawable(listViewMain, R.drawable.gradient_4));
         }
-        textView.setText(examPeriods.get(position));
+        textView.setText(examPeriods[position]);
         return convertView;
     }
 

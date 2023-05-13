@@ -12,6 +12,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Objects;
 
 public class ExamPeriodsList extends AppCompatActivity {
@@ -21,13 +22,14 @@ public class ExamPeriodsList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.exam_period_list);
         ListView listView = (ListView) findViewById(R.id.list_view);
-        ArrayList<String> examPeriods = new ArrayList<>();
+      /*  ArrayList<String> examPeriods = new ArrayList<>();
         examPeriods.add(0,"Janar");
         examPeriods.add(1,"Prill");
         examPeriods.add(2,"Qershor");
         examPeriods.add(3,"Shtator");
         examPeriods.add(4,"Nentor");
-
+*/
+        String examPeriods[]={"Janar","Prill","Qershor","Shtator","Nentor"};
 
 // instantiate the custom list adapter
         CustomBaseAdapter adapter = new CustomBaseAdapter(this, examPeriods);
@@ -39,22 +41,25 @@ public class ExamPeriodsList extends AppCompatActivity {
         itemsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if (examPeriods.get(1).equals("Prill")){
+                if (examPeriods[position]=="Janar"){
                     Intent intent=new Intent(ExamPeriodsList.this,JanuaryPeriod.class);
                     startActivity(intent);
 
-                } else if (examPeriods.get(1).equals("Prill")) {
+                } else if (examPeriods[position]=="Prill") {
                     Intent intent1=new Intent(ExamPeriodsList.this,AprilPeriod.class);
                     startActivity(intent1);
 
                 }
-                else if (examPeriods.get(2).equals("Qershor")) {
+                else if (examPeriods[position]=="Qershor") {
                     Intent intent2=new Intent(ExamPeriodsList.this,JunePeriod.class);
                     startActivity(intent2);}
-                else if (examPeriods.get(3).equals("Shtator")) {
+                else if (examPeriods[position]=="Shtator") {
                     Intent intent3=new Intent(ExamPeriodsList.this,SeptemberPeriod.class);
                     startActivity(intent3);}
 
+                else if (examPeriods[position]=="Nentor") {
+                    Intent intent4=new Intent(ExamPeriodsList.this,NovemberPeriod.class);
+                    startActivity(intent4);}
             }
         });
     }
