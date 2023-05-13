@@ -58,7 +58,7 @@ public class Menu extends AppCompatActivity {
     }
 
     public void goToExamPeriods() {
-        Intent intent = new Intent(this, ExamPeriodList.class);
+        Intent intent = new Intent(this, ExamPeriodsList.class);
         startActivity(intent);
     }
 

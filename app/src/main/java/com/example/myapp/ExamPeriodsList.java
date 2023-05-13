@@ -6,19 +6,14 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class ExamPeriodList extends AppCompatActivity {
+public class ExamPeriodsList extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +39,7 @@ public class ExamPeriodList extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if (examPeriods.contains("Janar")){
-                    Intent intent=new Intent(ExamPeriodList.this,JanuaryPeriod.class);
+                    Intent intent=new Intent(ExamPeriodsList.this,JanuaryPeriod.class);
                     startActivity(intent);
 
                 }
@@ -54,7 +49,7 @@ public class ExamPeriodList extends AppCompatActivity {
     }
 
     private void showCustomPopup() {
-        final Dialog dialog = new Dialog(ExamPeriodList.this);
+        final Dialog dialog = new Dialog(ExamPeriodsList.this);
         dialog.setContentView(R.layout.custom_popup);
         dialog.setCancelable(true);
 

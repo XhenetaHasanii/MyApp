@@ -15,14 +15,11 @@ import java.util.ArrayList;
 
 public class CustomBaseAdapter extends BaseAdapter {
     ArrayList<String> examPeriods;
-    /*JanuaryPeriod list;
-    ArrayList<String> exams;*/
-
-    ExamPeriodList listViewMain;
+    ExamPeriodsList listViewMain;
     Animation animation1;
 
 
-    public CustomBaseAdapter(ExamPeriodList listViewMain, ArrayList<String> examPeriods) {
+    public CustomBaseAdapter(ExamPeriodsList listViewMain, ArrayList<String> examPeriods) {
 
         this.listViewMain = listViewMain;
         this.examPeriods = examPeriods;
