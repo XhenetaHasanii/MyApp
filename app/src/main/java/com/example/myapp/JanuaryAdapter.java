@@ -13,12 +13,12 @@ import androidx.core.content.ContextCompat;
 
 import java.util.ArrayList;
 
-public class AdapterJanuary extends BaseAdapter {
+public class JanuaryAdapter extends BaseAdapter {
     JanuaryPeriod listViewMain1;
     ArrayList<String> exams;
     Animation animation1;
 
-    public AdapterJanuary(JanuaryPeriod listViewMain1, ArrayList<String> exams) {
+    public JanuaryAdapter(JanuaryPeriod listViewMain1, ArrayList<String> exams) {
         this.listViewMain1 = listViewMain1;
         this.exams = exams;
     }
