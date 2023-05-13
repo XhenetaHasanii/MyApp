@@ -10,13 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApp">
         <activity
+            android:name=".AprilPeriod"
+            android:exported="false" />
+        <activity
             android:name=".JanuaryPeriod"
             android:exported="false" />
         <activity
             android:name=".ExamPeriods"
             android:exported="false" />
         <activity
-            android:name=".ExamPeriodList"
+            android:name=".ExamPeriodsList"
             android:exported="false" />
         <activity
             android:name=".Menu"

@@ -12,6 +12,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class ExamPeriodsList extends AppCompatActivity {
 
@@ -19,7 +20,7 @@ public class ExamPeriodsList extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.exam_period_list);
-       ListView listView = (ListView) findViewById(R.id.list_view);
+        ListView listView = (ListView) findViewById(R.id.list_view);
         ArrayList<String> examPeriods = new ArrayList<>();
         examPeriods.add("Janar");
         examPeriods.add("Prill");
@@ -38,35 +39,26 @@ public class ExamPeriodsList extends AppCompatActivity {
         itemsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if (examPeriods.contains("Janar")){
+                if (examPeriods.get(0).equals("Janar")){
                     Intent intent=new Intent(ExamPeriodsList.this,JanuaryPeriod.class);
                     startActivity(intent);
 
+                } else if (examPeriods.get(2).equals("Qershor")) {
+                    Intent intent1=new Intent(ExamPeriodsList.this,AprilPeriod.class);
+                    startActivity(intent1);
+
                 }
 
+                Intent intent2=new Intent(ExamPeriodsList.this,StudentProfile.class);
+                startActivity(intent2);
+
+
+
             }
         });
     }
 
-    private void showCustomPopup() {
-        final Dialog dialog = new Dialog(ExamPeriodsList.this);
-        dialog.setContentView(R.layout.custom_popup);
-        dialog.setCancelable(true);
 
-        TextView textViewMessage = dialog.findViewById(R.id.textViewMessage);
-        Button buttonClose = dialog.findViewById(R.id.buttonClose);
-
-        textViewMessage.setText("This is a custom popup with text!");
-
-        buttonClose.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog.dismiss();
-            }
-        });
-
-        dialog.show();
-    }
 }
 
 
