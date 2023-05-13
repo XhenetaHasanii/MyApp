@@ -14,11 +14,11 @@ import androidx.core.content.ContextCompat;
 import java.util.ArrayList;
 
 public class NovemberAdapter extends BaseAdapter {
-NovemberPeriod array;
+NovemberPeriod list;
 ArrayList<String> examsNovember;
 Animation animation1;
-NovemberAdapter(NovemberPeriod array,ArrayList<String> examsNovember){
-    this.array=array;
+NovemberAdapter(NovemberPeriod list,ArrayList<String> examsNovember){
+    this.list=list;
     this.examsNovember=examsNovember;
 }
     public static int getRandom(int max) {
@@ -40,23 +40,23 @@ NovemberAdapter(NovemberPeriod array,ArrayList<String> examsNovember){
 
     @Override
     public View getView(int position, View view, ViewGroup parent) {
-        view= LayoutInflater.from(array).inflate(R.layout.exams_september,parent,false);
-        animation1 = AnimationUtils.loadAnimation(array, R.anim.animation1);
+
+        view= LayoutInflater.from(list).inflate(R.layout.exams_november,parent,false);
+        animation1 = AnimationUtils.loadAnimation(list, R.anim.animation1);
         TextView textView4= view.findViewById(R.id.examsNovember);
         LinearLayout ll_bg4;
-        ll_bg4= view.findViewById(R.id.ll_bg4);
-        int number1 = getRandom(3);
-        if (number1 == 1) {
-            ll_bg4.setBackground(ContextCompat.getDrawable(array, R.drawable.gradient_1));
+        ll_bg4= view.findViewById(R.id.ll_bg5);
+        int number2 = getRandom(4);
+        if (number2== 1) {
+            ll_bg4.setBackground(ContextCompat.getDrawable(list, R.drawable.gradient_1));
         }
-        if (number1 == 2) {
-            ll_bg4.setBackground(ContextCompat.getDrawable(array, R.drawable.gradient_2));
+        if (number2 == 2) {
+            ll_bg4.setBackground(ContextCompat.getDrawable(list, R.drawable.gradient_2));
         }
-        if (number1 == 3) {
-            ll_bg4.setBackground(ContextCompat.getDrawable(array, R.drawable.gradient_3));
+        if (number2 == 3) {
+            ll_bg4.setBackground(ContextCompat.getDrawable(list, R.drawable.gradient_3));
         }
-
-      textView4.setText(examsNovember.get(position));
+        textView4.setText(examsNovember.get(position));
 
         return view;
     }
