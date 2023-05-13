@@ -17,7 +17,16 @@ public class NovemberPeriod extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_november_period);
-       String examsNovember []={"Java","PHP","Elektronike"};
+      ArrayList<String> examsNovember=new ArrayList<>();
+      examsNovember.add("Programimi i Orientuar ne Objekte");
+      examsNovember.add("Programimi ne Web");
+      examsNovember.add("Matematike");
+      examsNovember.add("Inxhinieri Softuerike");
+      examsNovember.add("Sistemet e Shperndara");
+      examsNovember.add("Siguria ne Internet");
+      examsNovember.add("Gjurmimi i te dhenave");
+      examsNovember.add("Elektronike");
+      examsNovember.add("Interneti");
        NovemberAdapter adapter=new NovemberAdapter(this,examsNovember);
        ListView listView=(ListView)findViewById(R.id.listView_November);
        listView.setAdapter(adapter);

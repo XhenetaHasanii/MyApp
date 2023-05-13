@@ -11,11 +11,13 @@ import android.widget.TextView;
 
 import androidx.core.content.ContextCompat;
 
+import java.util.ArrayList;
+
 public class NovemberAdapter extends BaseAdapter {
 NovemberPeriod array;
-String examsNovember[];
+ArrayList<String> examsNovember;
 Animation animation1;
-NovemberAdapter(NovemberPeriod array,String examsNovember[]){
+NovemberAdapter(NovemberPeriod array,ArrayList<String> examsNovember){
     this.array=array;
     this.examsNovember=examsNovember;
 }
@@ -23,7 +25,7 @@ NovemberAdapter(NovemberPeriod array,String examsNovember[]){
         return (int) (Math.random() * max);}
     @Override
     public int getCount() {
-        return examsNovember.length;
+        return examsNovember.size();
     }
 
     @Override
@@ -54,7 +56,7 @@ NovemberAdapter(NovemberPeriod array,String examsNovember[]){
             ll_bg4.setBackground(ContextCompat.getDrawable(array, R.drawable.gradient_3));
         }
 
-      textView4.setText(examsNovember[position]);
+      textView4.setText(examsNovember.get(position));
 
         return view;
     }

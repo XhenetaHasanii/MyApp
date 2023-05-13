@@ -22,13 +22,8 @@ public class ExamPeriodsList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.exam_period_list);
         ListView listView = (ListView) findViewById(R.id.list_view);
-      /*  ArrayList<String> examPeriods = new ArrayList<>();
-        examPeriods.add(0,"Janar");
-        examPeriods.add(1,"Prill");
-        examPeriods.add(2,"Qershor");
-        examPeriods.add(3,"Shtator");
-        examPeriods.add(4,"Nentor");
-*/
+
+
         String examPeriods[]={"Janar","Prill","Qershor","Shtator","Nentor"};
 
 // instantiate the custom list adapter
