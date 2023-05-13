@@ -19,14 +19,12 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class ExamPeriodList extends AppCompatActivity {
-    ListView listView;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.exam_period_list);
-        listView = (ListView) findViewById(R.id.list_view);
+       ListView listView = (ListView) findViewById(R.id.list_view);
         ArrayList<String> examPeriods = new ArrayList<>();
         examPeriods.add("Janar");
         examPeriods.add("Prill");
@@ -42,12 +40,11 @@ public class ExamPeriodList extends AppCompatActivity {
         ListView itemsListView = (ListView) findViewById(R.id.list_view);
         itemsListView.setAdapter(adapter);
 
-
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        itemsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if (examPeriods.contains("Janar")){
-                    Intent intent=new Intent(getApplicationContext(),JanuaryPeriod.class);
+                    Intent intent=new Intent(ExamPeriodList.this,JanuaryPeriod.class);
                     startActivity(intent);
 
                 }

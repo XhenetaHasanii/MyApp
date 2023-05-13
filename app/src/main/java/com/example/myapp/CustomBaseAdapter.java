@@ -15,6 +15,8 @@ import java.util.ArrayList;
 
 public class CustomBaseAdapter extends BaseAdapter {
     ArrayList<String> examPeriods;
+    /*JanuaryPeriod list;
+    ArrayList<String> exams;*/
 
     ExamPeriodList listViewMain;
     Animation animation1;
@@ -27,6 +29,7 @@ public class CustomBaseAdapter extends BaseAdapter {
 
 
     }
+
 
     public static int getRandom(int max) {
         return (int) (Math.random() * max);
@@ -53,7 +56,7 @@ public class CustomBaseAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         convertView = LayoutInflater.from(listViewMain).inflate(R.layout.exam_periods, parent, false);
         animation1 = AnimationUtils.loadAnimation(listViewMain, R.anim.animation1);
-        TextView textView = (TextView) convertView.findViewById(R.id.periods);
+        TextView textView = convertView.findViewById(R.id.periods);
         LinearLayout ll_bg;
         ll_bg = convertView.findViewById(R.id.ll_bg);
         int number = getRandom(5);
@@ -73,10 +76,10 @@ public class CustomBaseAdapter extends BaseAdapter {
             ll_bg.setBackground(ContextCompat.getDrawable(listViewMain, R.drawable.gradient_4));
         }
         textView.setText(examPeriods.get(position));
-
         return convertView;
-
     }
+
+
 }
 
 
