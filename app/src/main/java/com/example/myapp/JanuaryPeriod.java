@@ -21,13 +21,13 @@ public class JanuaryPeriod extends AppCompatActivity {
         setContentView(R.layout.activity_january_period);
 
         ArrayList<String> exams = new ArrayList<>();
-        exams.add("Java");
-        exams.add("PHP");
-        exams.add("Database");
-        exams.add("Internet");
-        exams.add("Matematike3");
-        exams.add("Inxhinieri Softuerike");
-        exams.add("Elektronike");
+        exams.add("Java,  20.01");
+        exams.add("PHP,  23.01");
+        exams.add("Database,  30.01");
+        exams.add("Internet,  19.01");
+        exams.add("Matematike3,  01.02");
+        exams.add("Inxhinieri Softuerike,  03.02");
+        exams.add("Elektronike,  08.02");
 
         JanuaryAdapter adapter1 = new JanuaryAdapter(this, exams);
         ListView listView1 = (ListView) findViewById(R.id.list);

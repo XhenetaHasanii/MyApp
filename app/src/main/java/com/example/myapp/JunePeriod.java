@@ -16,8 +16,11 @@ public class JunePeriod extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_june_period);
         ArrayList<String> examsJune=new ArrayList<>();
-        examsJune.add("Java");
-        examsJune.add("PHP");
+        examsJune.add("Java,  25.06");
+        examsJune.add("PHP,  03.07");
+        examsJune.add("Arkitektura e kompjuterit,  01.07");
+        examsJune.add("Ndermarresi,  20.06");
+        examsJune.add("Menaxhimi i projekteve,  04.07");
         JuneAdapter adapter=new JuneAdapter(this,examsJune);
         ListView listView=(ListView)findViewById(R.id.listView_June);
         listView.setAdapter(adapter);

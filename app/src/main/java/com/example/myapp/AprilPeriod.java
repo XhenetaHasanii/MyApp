@@ -17,9 +17,9 @@ public class AprilPeriod extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_april_period);
         ArrayList<String> examsApril = new ArrayList<>();
-        examsApril.add("Java");
-        examsApril.add("PHP");
-        examsApril.add("KNK");
+        examsApril.add("Java,  20.04");
+        examsApril.add("PHP  01.05");
+        examsApril.add("KNK  27.04");
         AprilAdapter adapter = new AprilAdapter(this, examsApril);
         ListView listView = (ListView) findViewById(R.id.listView_April);
         listView.setAdapter(adapter);
