@@ -21,7 +21,7 @@ public class JanuaryPeriod extends AppCompatActivity {
         setContentView(R.layout.activity_january_period);
 
         ArrayList<String> exams = new ArrayList<>();
-        exams.add("Java,  20.01");
+        exams.add("Programimi i orientuar ne objekte,  20.01");
         exams.add("PHP,  23.01");
         exams.add("Database,  30.01");
         exams.add("Internet,  19.01");

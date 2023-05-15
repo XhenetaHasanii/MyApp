@@ -70,7 +70,7 @@ public class Menu extends AppCompatActivity {
         TextView textViewMessage = dialog.findViewById(R.id.textViewMessage);
         Button buttonClose = dialog.findViewById(R.id.buttonClose);
 
-        textViewMessage.setText("This is a custom popup with text!");
+        textViewMessage.setText("Payment of the semester!");
 
         buttonClose.setOnClickListener(new View.OnClickListener() {
             @Override
