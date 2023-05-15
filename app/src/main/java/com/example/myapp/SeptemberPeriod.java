@@ -16,8 +16,10 @@ public class SeptemberPeriod extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_september_period);
         ArrayList<String> examsSeptember=new ArrayList<>();
-        examsSeptember.add("Java");
-        examsSeptember.add("Inxhinieri Softuerike");
+        examsSeptember.add("Programimi i orientuar ne Objekte,  Provimi mbahet me:30.09");
+        examsSeptember.add("Inxhinieri Softuerike,  Provimi mbahet me: 21.09");
+        examsSeptember.add("Dizajni dhe analiza e algoritmeve,  Provimi mbahet me:24.09");
+        examsSeptember.add("Elektronike, Provimi mbahet me:02.10");
         SeptemberAdapter adapter=new SeptemberAdapter(this,examsSeptember);
         ListView listView=(ListView)findViewById(R.id.listView_September);
         listView.setAdapter(adapter);
