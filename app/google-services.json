@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1097065631138",
+    "project_id": "fiek-student-app",
+    "storage_bucket": "fiek-student-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1097065631138:android:061251d31d111fbc5876fb",
+        "android_client_info": {
+          "package_name": "com.example.myapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1097065631138-maeqeh7nrni5f79pine2u1u0l17mjfdb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_MJFrlp5aCfXByA3bXMx0djje-IUutCk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1097065631138-maeqeh7nrni5f79pine2u1u0l17mjfdb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
