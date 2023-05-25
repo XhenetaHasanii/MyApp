@@ -55,7 +55,7 @@ public class Login extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(task.isSuccessful()){
-                                startActivity(new Intent(Login.this,ReadData.class));
+                                startActivity(new Intent(Login.this,Menu.class));
                                 finish();
                             }
                             else {
