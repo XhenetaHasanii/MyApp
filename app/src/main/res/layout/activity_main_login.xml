@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Login"
-    android:background="@drawable/background">
+    android:background="@drawable/screen"
+    android:orientation="vertical"
+    android:padding="20dp">
     <ImageView
         android:id="@+id/unii"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:src="@drawable/uni"
         android:layout_centerHorizontal="true"
-        android:padding="13dp"
         android:layout_margin="7dp"/>
 
     <TextView
@@ -20,60 +21,50 @@
         android:layout_height="wrap_content"
         android:id="@+id/signin"
         android:layout_below="@id/unii"
-        android:text="Sign in"
-        android:textSize="30dp"
-        android:textColor="@color/black"
+        android:text="Log In!"
+        android:textSize="50dp"
+        android:textColor="@color/white"
         android:textStyle="bold"
-        android:gravity="center"
-        android:layout_margin="20dp"/>
+        android:gravity="left"></TextView>
 
-    <!-- Rest of the layout elements -->
 
-    <EditText
+
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/username"
-        android:background="@drawable/btn_background_2"
-        android:layout_margin="13dp"
-        android:padding="15dp"
-        android:hint="Email"
-        android:textColor="@color/white"
-        android:textColorHint="@color/black"
-        android:textSize="20dp"
-        android:drawableLeft="@drawable/baseline_person_24"
-        android:drawablePadding="18dp"
-        android:layout_below="@+id/signin"/>
-
-    <EditText
+        android:layout_marginTop="150dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            android:id="@+id/username"
+            android:inputType="textEmailAddress"/>
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/password"
-        android:layout_below="@+id/username"
-        android:layout_margin="13dp"
-        android:hint="Password"
-        android:padding="15dp"
-        android:textColor="@color/white"
-        android:textColorHint="@color/black"
-        android:textSize="20dp"
-        android:drawableLeft="@drawable/baseline_info_24"
-        android:drawablePadding="18dp"
-        android:background="@drawable/btn_background_2"/>
-
-
-    <!-- Rest of the layout elements -->
+        android:layout_marginTop="20dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/password"
+            android:hint="Password"
+            android:inputType="textPassword"
+            app:passwordToggleEnabled="true"/>
+    </com.google.android.material.textfield.TextInputLayout>
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/loginBtn"
-        android:text="login"
-        android:layout_below="@id/password"
-        android:layout_centerHorizontal="true"
-        android:padding="15dp"
-        android:textSize="20dp"
-        android:textColor="@color/white"
-        android:background="@drawable/btn_background_1"
-        android:onClick="login"
-        tools:ignore="OnClick" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/round_btn"
+        android:text="Sign in "
+        android:textSize="15dp"
+        android:onClick="log"/>
 
-</RelativeLayout>
+
+
+</LinearLayout>
 

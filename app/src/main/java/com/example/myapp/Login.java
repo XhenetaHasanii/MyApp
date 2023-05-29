@@ -81,4 +81,10 @@ public class Login extends AppCompatActivity {
 
 
 
-}}
+
+}
+public void login(View v){
+        Intent intent=new Intent(Login.this,Menu.class);
+        startActivity(intent);
+}
+}
