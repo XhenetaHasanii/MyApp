@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.CollectionReference;
@@ -14,6 +16,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class ExamPeriodsList extends AppCompatActivity {
@@ -25,15 +28,15 @@ public class ExamPeriodsList extends AppCompatActivity {
         ListView listView = (ListView) findViewById(R.id.list_view);
         firestoreInstance = FirebaseFirestore.getInstance();
 
-        List<Afati> examPeriodDocuments=new ArrayList<>();
+        List<Afatii> examPeriodDocuments=new ArrayList<>();
         String examPeriods[] = new String[examPeriodDocuments.size()];
-        CollectionReference collectionRef = firestoreInstance.collection("afati");
+        CollectionReference collectionRef = firestoreInstance.collection("afatii");
         collectionRef.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 if (task.isSuccessful()){
                     for (DocumentSnapshot doc:task.getResult()){
-                        examPeriodDocuments.add(doc.toObject(Afati.class));
+                        examPeriodDocuments.add(doc.toObject(Afatii.class));
                     }
                 }
             }
@@ -41,7 +44,7 @@ public class ExamPeriodsList extends AppCompatActivity {
 
 
         for (int i =0;i<examPeriodDocuments.size();++i){
-            examPeriods[i]=examPeriodDocuments.get(i).getExamPeriodName();
+            examPeriods[i]= Arrays.toString(examPeriodDocuments.get(i).getExamPeriods());
         }
 
 // instantiate the custom list adapter
@@ -51,34 +54,29 @@ public class ExamPeriodsList extends AppCompatActivity {
         ListView itemsListView = (ListView) findViewById(R.id.list_view);
         itemsListView.setAdapter(adapter);
 
-        itemsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+         itemsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if (examPeriods[position]=="Janar"){
-                    Intent intent=new Intent(ExamPeriodsList.this,JanuaryPeriod.class);
-                    startActivity(intent);
+                if (examPeriods[0] == "Janar") {
+                  examPeriodDocuments.get(0);
 
-                } else if (examPeriods[position]=="Prill") {
-                    Intent intent1=new Intent(ExamPeriodsList.this,AprilPeriod.class);
-                    startActivity(intent1);
-
+                } else if (examPeriods[1] == "Prill") {
+                    examPeriodDocuments.get(1);
+                } else if (examPeriods[2] == "Qershor") {
+                  examPeriodDocuments.get(2);
+                } else if (examPeriods[3] == "Shtator") {
+                 examPeriodDocuments.get(3);
+                } else if (examPeriods[4] == "Nentor") {
+                   examPeriodDocuments.get(4);
                 }
-                else if (examPeriods[position]=="Qershor") {
-                    Intent intent2=new Intent(ExamPeriodsList.this,JunePeriod.class);
-                    startActivity(intent2);}
-                else if (examPeriods[position]=="Shtator") {
-                    Intent intent3=new Intent(ExamPeriodsList.this,SeptemberPeriod.class);
-                    startActivity(intent3);}
-
-                else if (examPeriods[position]=="Nentor") {
-                    Intent intent4=new Intent(ExamPeriodsList.this,NovemberPeriod.class);
-                    startActivity(intent4);}
+                ;
             }
         });
-    }
+    }}
 
 
-}
+
+
 
 
 

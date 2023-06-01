@@ -4,8 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/rl_item"
-    android:padding="10dp">
-
+    android:background="@drawable/background">
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -17,21 +16,19 @@
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:id="@+id/ll_bg"
-            android:background="@drawable/gradient_1"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Afati i Qershorit"
+                android:text="Afati i Janarit"
                 android:id="@+id/periods"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textAlignment="center"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:textStyle="bold"
                 android:textSize="30sp" />
-
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
