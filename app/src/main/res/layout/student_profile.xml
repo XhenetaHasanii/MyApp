@@ -4,53 +4,52 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".Login"
+    android:background="@drawable/screen"
     android:orientation="vertical"
-    android:background="@drawable/screen">
-    <ScrollView
+    android:padding="20dp">
+
+
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <LinearLayout
+        android:layout_height="wrap_content"
+        android:id="@+id/student"
+        android:text="Student!"
+        android:textSize="50dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:gravity="left"></TextView>
+
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+android:layout_margin="80dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_margin="20dp">
+            android:layout_height="60dp"
+            android:hint="Personal Information"
+            android:id="@+id/personalInformation"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/btn_background_1"
+            android:drawableStart="@drawable/ic_3"
+            android:drawablePadding="20dp"
+            android:paddingStart="20dp"
+            android:text="Personal Information"
+            android:textAlignment="viewStart"
+            />
 
-                <TextView
-                    android:id="@+id/textView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Student"
-                    android:layout_marginTop="16dp"
-                    android:textSize="25sp"
-                    android:textStyle="bold"
-                    android:layout_gravity="center"
-                    android:layout_margin="30dp"
-                />
+    <Button
+        android:id="@+id/backToLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:text="Back to Login!"
+        android:textSize="15dp"
+        android:onClick="BackToLogin"
+        android:background="@drawable/btn_background_1"/>
 
 
 
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/button3"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:drawableStart="@drawable/ic_3"
-                        android:text="Personal Information"
-                        android:layout_below="@+id/textView"
-                        android:layout_margin="110dp"
-                        />
+</LinearLayout>
 
-                    <Button
-                        android:id="@+id/backToLogin"
-                        android:layout_width="match_parent"
-                        android:layout_height="60dp"
-                        android:text="Back to Login"
-                        android:textColor="#ffffff"
-                        android:textStyle="bold"
-                        android:textSize="18sp"
-                        android:onClick="backToLogin"
-                        android:layout_below="@+id/button3"
-                        android:layout_margin="20dp"/>
-
-    </LinearLayout>

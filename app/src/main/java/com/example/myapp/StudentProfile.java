@@ -16,7 +16,7 @@ public class StudentProfile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(layout.student_profile);
-        Button button = (Button) findViewById(R.id.backToLogin);
+        Button button=(Button)findViewById(id.backToLogin);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
