@@ -23,8 +23,6 @@ public class Menu extends AppCompatActivity {
         Button button2 = findViewById(R.id.button2);
         Button button3 = findViewById(R.id.button3);
         listView = findViewById(R.id.listview);
-        ArrayList<Provimi> periodExams = new ArrayList<>();
-        ArrayAdapter adapter = new ArrayAdapter(this, R.layout.menu, periodExams);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

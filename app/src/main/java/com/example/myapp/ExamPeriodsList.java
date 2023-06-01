@@ -21,6 +21,7 @@ import java.util.List;
 public class ExamPeriodsList extends AppCompatActivity {
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     private List<Afati> examPeriodDocuments;
+    private FirebaseFirestore firestoreInstance;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
