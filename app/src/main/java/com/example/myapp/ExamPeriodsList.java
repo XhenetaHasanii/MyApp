@@ -15,12 +15,15 @@ import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.google.firebase.ktx.Firebase;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class ExamPeriodsList extends AppCompatActivity {
-     FirebaseFirestore firestoreInstance;
+     private FirebaseFirestore firestoreInstance;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
