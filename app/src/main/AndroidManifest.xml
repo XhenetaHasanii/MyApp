@@ -18,9 +18,6 @@
         android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar">
 
         <activity
-            android:name=".ReadData"
-            android:exported="false" />
-        <activity
             android:name=".NovemberPeriod"
             android:exported="false" />
         <activity
