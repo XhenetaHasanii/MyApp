@@ -24,7 +24,7 @@ import java.util.List;
 
 public class Menu extends AppCompatActivity {
     private ListView listView;
-   /* private FirebaseFirestore firestoreInstance;*/
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,8 +34,6 @@ public class Menu extends AppCompatActivity {
         Button button2 = findViewById(R.id.button2);
         Button button3 = findViewById(R.id.button3);
         listView = findViewById(R.id.listview);
-        ArrayList<Provimi> periodExams = new ArrayList<>();
-        ArrayAdapter adapter = new ArrayAdapter(this, R.layout.menu, periodExams);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -82,7 +80,7 @@ public class Menu extends AppCompatActivity {
     }
 
     public void goToExamPeriods() {
-        Intent intent = new Intent(this, ExamPeriods.class);
+        Intent intent = new Intent(this, ExamPeriodsList.class);
         startActivity(intent);
     }
 
