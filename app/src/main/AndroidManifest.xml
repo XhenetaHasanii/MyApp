@@ -33,9 +33,6 @@
             android:name=".JanuaryPeriod"
             android:exported="false" />
         <activity
-            android:name=".ExamPeriods"
-            android:exported="false" />
-        <activity
             android:name=".ExamPeriodsList"
             android:exported="false" />
         <activity
@@ -43,6 +40,9 @@
             android:exported="false" />
         <activity
             android:name=".StudentProfile"
+            android:exported="false" />
+        <activity
+            android:name=".Exams"
             android:exported="false" />
         <!--
  <activity
