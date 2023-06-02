@@ -41,9 +41,6 @@
         <activity
             android:name=".StudentProfile"
             android:exported="false" />
-        <activity
-            android:name=".Exams"
-            android:exported="false" />
         <!--
  <activity
             android:name=".MainActivityLogin"

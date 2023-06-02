@@ -1,45 +1,25 @@
 package com.example.myapp;
 
-import static com.example.myapp.JanuaryPeriod.EXTRA_DATA;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcel;
 import android.os.Parcelable;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ListAdapter;
 import android.widget.ListView;
-
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
-
-import org.checkerframework.checker.units.qual.C;
-
 import java.util.ArrayList;
 import java.util.List;
+
 public class ExamPeriodsList extends AppCompatActivity {
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     private List<Afati> examPeriodDocuments;
-    private List<Exams> periodExams;
-    private FirebaseFirestore firestoreInstance;
-    private OnItemClickListener mListener;
-    public interface OnItemClickListener {
-        void onItemClick(int position);
-    }
-
-
-    public void setOnItemClickListener(OnItemClickListener listener) {
-        mListener = listener;
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,17 +49,14 @@ public class ExamPeriodsList extends AppCompatActivity {
                         Intent intent=new Intent(ExamPeriodsList.this,JanuaryPeriod.class);
                         startActivity(intent);}
                        else if(
-                                examPeriods[position].contains("Prill")){
+                               examPeriods[position].contains("Prill")){
                             Intent intent=new Intent(ExamPeriodsList.this,AprilPeriod.class);
                             startActivity(intent);}*/
                         Intent intent=new Intent(ExamPeriodsList.this,JanuaryPeriod.class);
-                        intent.putParcelableArrayListExtra(EXTRA_DATA, (ArrayList<? extends Parcelable>) periodExams);
+                        intent.putParcelableArrayListExtra("provimet", (ArrayList<? extends Parcelable>) list.get(0).getPeriodExams());
                         startActivity(intent);
                     }
                 });
-
-
-
             }
         });
     }
@@ -97,7 +74,6 @@ public class ExamPeriodsList extends AppCompatActivity {
                 }
             }
         });
-        System.out.println("finished reading data");
     }
 
     private interface FirestoreCallback {
