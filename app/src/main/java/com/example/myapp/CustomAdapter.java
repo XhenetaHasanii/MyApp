@@ -14,11 +14,13 @@ import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 
  class CustomBaseAdapter extends BaseAdapter {
     String examPeriods[];
+
     ExamPeriodsList listViewMain;
     Animation animation1;
 
@@ -27,7 +29,9 @@ import java.util.Arrays;
         this.examPeriods = examPeriods;
     }
 
-    public static int getRandom(int max) {
+
+
+     public static int getRandom(int max) {
         return (int) (Math.random() * max);
     }
 
@@ -71,7 +75,9 @@ import java.util.Arrays;
         }
         textView.setText(examPeriods[position]);
         return convertView;
+
     }
+
 
 }
 
