@@ -16,18 +16,21 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 
- class CustomBaseAdapter extends BaseAdapter {
+class CustomBaseAdapter extends BaseAdapter {
     String examPeriods[];
 
-    ExamPeriodsList listViewMain;
+
+   ExamPeriodsList listViewMain;
     Animation animation1;
 
     public CustomBaseAdapter(ExamPeriodsList listViewMain, String examPeriods[]) {
         this.listViewMain = listViewMain;
         this.examPeriods = examPeriods;
     }
+
 
 
 
