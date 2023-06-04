@@ -5,14 +5,13 @@ import static com.example.myapp.R.*;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
+
 import android.os.Bundle;
-import android.os.Parcelable;
+
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -31,7 +30,7 @@ public class StudentProfile extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(layout.student_profile);
+        setContentView(R.layout.exam_period_list);
         personalInformation = new ArrayList<>();
 
                 readData(new FirestoreCallback() {
@@ -39,22 +38,27 @@ public class StudentProfile extends AppCompatActivity {
                     public void onCallback(List<Student> list) {
                         String[] personalInformation = new String[list.size()];
                         for (int i = 0; i < list.size(); ++i) {
-                            personalInformation[i] = list.get(i).getFirstName()+ ""+list.get(i).getLastName();
+                            personalInformation[i] = list.get(i).getFirstName() + "" + list.get(i).getLastName();
 
 
                         }
                         for (String s : personalInformation) {
                             System.out.println(s);
                         }
-                        AdapterStudent adapter=new AdapterStudent(StudentProfile.this,personalInformation);
-                        ListView listView=(ListView)findViewById(id.list_view);
-                  listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                      @Override
-                      public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        AdapterStudent adapter = new AdapterStudent(StudentProfile.this, personalInformation);
+                         ListView listView=(ListView)findViewById(id.list_view);
 
-                      }
-                  });
-            }});}
+                        listView.setAdapter(adapter);
+                       listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                           @Override
+                           public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+
+                           }
+                       });
+
+
+                    }});}
 
 
 
@@ -73,9 +77,17 @@ public class StudentProfile extends AppCompatActivity {
         });
     }
 
+   public void  backToLogin(){
+
+   }
+  public void  personalinformation(){
+
+  }
+
     private interface FirestoreCallback {
         void onCallback(List<Student> list);
     }
+
 
 
 

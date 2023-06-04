@@ -1,5 +1,6 @@
 package com.example.myapp;
 
+import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,29 +43,15 @@ public class AdapterStudent  extends BaseAdapter {
         return position;
     }
 
+
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         convertView = LayoutInflater.from(listViewMain1).inflate(R.layout.student_profile, parent, false);
         animation = AnimationUtils.loadAnimation(listViewMain1, R.anim.animation1);
-        TextView textView = convertView.findViewById(R.id.periods);
-        LinearLayout ll_bg;
-        ll_bg = convertView.findViewById(R.id.ll_bg);
-        int number = getRandom(5);
-        if (number == 1) {
-            ll_bg.setBackground(ContextCompat.getDrawable(listViewMain1, R.drawable.gradient_1));
-        }
-        if (number == 2) {
-            ll_bg.setBackground(ContextCompat.getDrawable(listViewMain1, R.drawable.gradient_2));
-        }
-        if (number == 3) {
-            ll_bg.setBackground(ContextCompat.getDrawable(listViewMain1, R.drawable.gradient_3));
-        }
-        if (number == 4) {
-            ll_bg.setBackground(ContextCompat.getDrawable(listViewMain1, R.drawable.gradient_4));
-        }
-        if (number == 5) {
-            ll_bg.setBackground(ContextCompat.getDrawable(listViewMain1, R.drawable.gradient_4));
-        }
+        TextView textView = convertView.findViewById(R.id.personalInformation);
+       /* LinearLayout ll_bg;
+        ll_bg = convertView.findViewById(R.id.ll_bg);*/
+
         textView.setText(personalInformation[position]);
         return convertView;
 
