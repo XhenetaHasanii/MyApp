@@ -77,12 +77,6 @@ public class StudentProfile extends AppCompatActivity {
         });
     }
 
-   public void  backToLogin(){
-
-   }
-  public void  personalinformation(){
-
-  }
 
     private interface FirestoreCallback {
         void onCallback(List<Student> list);

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Login"
+    tools:context=".Test"
     android:background="@drawable/screen"
     android:orientation="vertical"
     android:padding="50dp">
@@ -44,17 +44,14 @@ android:textAlignment="viewStart"
        android:drawablePadding="20dp"
        android:paddingStart="20dp"
        android:text="Personal Information"
-       android:textAlignment="viewStart"
        android:onClick="personalinformation"
-       />
-
-
+       tools:ignore="OnClick" />
    <Button
 android:layout_width="match_parent"
+
 android:layout_height="wrap_content"
 android:layout_marginTop="13dp"
 android:text="Back to Login!"
 android:textSize="15dp"
-android:onClick="backToLogin"
 android:background="@drawable/btn_background_1" />
 </LinearLayout>
