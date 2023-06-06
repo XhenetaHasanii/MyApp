@@ -4,7 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Test"
-    android:background="@drawable/screen"
     android:orientation="vertical"
     android:padding="50dp">
 
@@ -15,7 +14,7 @@
     android:id="@+id/student"
     android:text="Student!"
     android:textSize="50dp"
-    android:textColor="@color/white"
+    android:textColor="@color/black"
     android:textStyle="bold"
     android:gravity="left"></TextView>
 

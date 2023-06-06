@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Menu"
-    android:background="@drawable/screen">
+    android:background="@drawable/custom_edittext">
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -23,7 +23,7 @@
         android:layout_height="130dp"
         android:text="Go to profile"
         android:textSize="13dp"
-        android:textColor="@color/white"
+        android:textColor="@color/purple"
         android:background="@drawable/background"
         android:padding="12dp"
         android:layout_margin="18dp"
