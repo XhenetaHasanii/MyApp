@@ -22,12 +22,12 @@ public class Menu extends AppCompatActivity {
         Button button1 = findViewById(R.id.button1);
         Button button2 = findViewById(R.id.button2);
         Button button3 = findViewById(R.id.button3);
+        Button button4 = findViewById(R.id.button4);
         listView = findViewById(R.id.listview);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 goToProfile();
-
             }
         });
         Button popupButton = findViewById(R.id.buttonPopup);
@@ -52,11 +52,14 @@ public class Menu extends AppCompatActivity {
 
         });
 
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToMensaMap();
+            }
+        });
+
     }
-
-
-
-
 
     public void goToProfile() {
         Intent intent = new Intent(this, StudentProfile.class);
@@ -70,6 +73,11 @@ public class Menu extends AppCompatActivity {
 
     public void goToExamPeriods() {
         Intent intent = new Intent(this, ExamPeriodsList.class);
+        startActivity(intent);
+    }
+
+    public void goToMensaMap() {
+        Intent intent = new Intent(this, MensaMapsActivity.class);
         startActivity(intent);
     }
 
