@@ -49,7 +49,6 @@
             android:name=".MainActivityLogin"
             android:exported="false" />
         -->
-        <activity android:name=".EventEditActivity" />
         <activity android:name=".WeekViewActivity" />
         <activity android:name=".CalendarActivity" />
         <activity
