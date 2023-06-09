@@ -8,9 +8,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.BaseAdapter;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import androidx.core.content.ContextCompat;
-
 import java.util.ArrayList;
 
 public class SeptemberAdapter extends BaseAdapter {

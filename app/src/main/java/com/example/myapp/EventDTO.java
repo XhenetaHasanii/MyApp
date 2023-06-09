@@ -1,7 +1,6 @@
 package com.example.myapp;
 
 import java.util.Date;
-
 public class EventDTO {
 
     private String emri;

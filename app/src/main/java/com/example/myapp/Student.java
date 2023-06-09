@@ -1,20 +1,19 @@
 package com.example.myapp;
 
 public class Student {
-
-
     public String firstName;
     public String lastName;
     public int yearLevel;
 
-public Student()
-{}
-
-    public Student(String firstName, String lastName, int yearLevel){
-        this.firstName=firstName;
-        this.lastName=lastName;
-        this.yearLevel=yearLevel;
+    public Student() {
     }
+
+    public Student(String firstName, String lastName, int yearLevel) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.yearLevel = yearLevel;
+    }
+
     public String getFirstName() {
         return firstName;
     }

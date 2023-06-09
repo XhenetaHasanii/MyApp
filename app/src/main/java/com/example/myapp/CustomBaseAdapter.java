@@ -9,21 +9,11 @@ import android.view.animation.AnimationUtils;
 import android.widget.BaseAdapter;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
-import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
-import androidx.recyclerview.widget.RecyclerView;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 
 class CustomBaseAdapter extends BaseAdapter {
     String examPeriods[];
-
-
-   ExamPeriodsList listViewMain;
+    ExamPeriodsList listViewMain;
     Animation animation1;
 
     public CustomBaseAdapter(ExamPeriodsList listViewMain, String examPeriods[]) {
@@ -32,9 +22,7 @@ class CustomBaseAdapter extends BaseAdapter {
     }
 
 
-
-
-     public static int getRandom(int max) {
+    public static int getRandom(int max) {
         return (int) (Math.random() * max);
     }
 
@@ -80,7 +68,6 @@ class CustomBaseAdapter extends BaseAdapter {
         return convertView;
 
     }
-
 
 }
 

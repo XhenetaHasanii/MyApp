@@ -8,17 +8,9 @@ import android.view.animation.AnimationUtils;
 import android.widget.BaseAdapter;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import androidx.core.content.ContextCompat;
-
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Date;
-import java.util.List;
-import java.util.concurrent.ExecutorCompletionService;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
 
 public class Adapter extends BaseAdapter {
     JanuaryPeriod listViewMain1;

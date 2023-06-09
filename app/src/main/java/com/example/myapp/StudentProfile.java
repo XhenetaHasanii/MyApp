@@ -5,12 +5,9 @@ import static com.example.myapp.R.*;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-
 import android.os.Bundle;
-
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ListView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -33,33 +30,32 @@ public class StudentProfile extends AppCompatActivity {
         setContentView(R.layout.exam_period_list);
         personalInformation = new ArrayList<>();
 
-                readData(new FirestoreCallback() {
+        readData(new FirestoreCallback() {
+            @Override
+            public void onCallback(List<Student> list) {
+                String[] personalInformation = new String[list.size()];
+                for (int i = 0; i < list.size(); ++i) {
+                    personalInformation[i] = list.get(i).getFirstName() + "" + list.get(i).getLastName();
+
+
+                }
+                for (String s : personalInformation) {
+                    System.out.println(s);
+                }
+                /*AdapterStudent adapter = new AdapterStudent(StudentProfile.this, personalInformation);*/
+                ListView listView = (ListView) findViewById(id.list_view);
+
+                /*listView.setAdapter(adapter);*/
+                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
-                    public void onCallback(List<Student> list) {
-                        String[] personalInformation = new String[list.size()];
-                        for (int i = 0; i < list.size(); ++i) {
-                            personalInformation[i] = list.get(i).getFirstName() + "" + list.get(i).getLastName();
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
 
-                        }
-                        for (String s : personalInformation) {
-                            System.out.println(s);
-                        }
-                        /*AdapterStudent adapter = new AdapterStudent(StudentProfile.this, personalInformation);*/
-                         ListView listView=(ListView)findViewById(id.list_view);
-
-                        /*listView.setAdapter(adapter);*/
-                       listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                           @Override
-                           public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-
-                           }
-                       });
-
-
-                    }});}
-
+                    }
+                });
+            }
+        });
+    }
 
 
     private void readData(StudentProfile.FirestoreCallback firestoreCallback) {
@@ -69,7 +65,7 @@ public class StudentProfile extends AppCompatActivity {
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 if (task.isSuccessful()) {
                     for (DocumentSnapshot doc : task.getResult()) {
-                      personalInformation.add(doc.toObject(Student.class));
+                        personalInformation.add(doc.toObject(Student.class));
                     }
                     firestoreCallback.onCallback(personalInformation);
                 }
@@ -81,8 +77,5 @@ public class StudentProfile extends AppCompatActivity {
     private interface FirestoreCallback {
         void onCallback(List<Student> list);
     }
-
-
-
 
 }

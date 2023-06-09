@@ -2,9 +2,7 @@ package com.example.myapp;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-
 import androidx.annotation.NonNull;
-
 import java.util.Date;
 
 public class Provimi implements Parcelable {

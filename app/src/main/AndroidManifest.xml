@@ -15,10 +15,11 @@
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
+            android:name=".MenuActivity"
+            android:exported="false" />
+        <activity
             android:name=".ProfileActivity"
             android:exported="false" />
-
-
         <activity
             android:name=".NovemberPeriod"
             android:exported="false" />

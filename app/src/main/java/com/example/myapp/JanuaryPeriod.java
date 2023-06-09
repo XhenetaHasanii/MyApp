@@ -1,25 +1,11 @@
 package com.example.myapp;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
-
 import android.os.Bundle;
-import android.os.Parcel;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.BaseAdapter;
-import android.widget.LinearLayout;
-import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
-
-import org.checkerframework.checker.units.qual.A;
-
 import java.util.ArrayList;
-import java.util.List;
 
 public class JanuaryPeriod extends AppCompatActivity  {
     public static final String EXTRA_DATA = "EXTRA_DATA";
