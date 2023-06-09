@@ -45,10 +45,10 @@ public class StudentProfile extends AppCompatActivity {
                         for (String s : personalInformation) {
                             System.out.println(s);
                         }
-                        AdapterStudent adapter = new AdapterStudent(StudentProfile.this, personalInformation);
+                        /*AdapterStudent adapter = new AdapterStudent(StudentProfile.this, personalInformation);*/
                          ListView listView=(ListView)findViewById(id.list_view);
 
-                        listView.setAdapter(adapter);
+                        /*listView.setAdapter(adapter);*/
                        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                            @Override
                            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
