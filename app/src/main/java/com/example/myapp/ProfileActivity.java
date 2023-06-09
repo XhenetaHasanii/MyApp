@@ -2,27 +2,20 @@ package com.example.myapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ListView;
-
+import android.widget.TextView;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class Profile extends AppCompatActivity {
+public class ProfileActivity extends AppCompatActivity {
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     private List<Student> personalInformation;
 
@@ -30,45 +23,37 @@ public class Profile extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_profile);
         getSupportActionBar().setElevation(0);
-
-        setContentView(R.layout.exam_period_list);
         personalInformation = new ArrayList<>();
 
-        readData(new Profile.FirestoreCallback() {
+        TextView emri = findViewById(R.id.emri);
+        TextView mbiemri = findViewById(R.id.mbiemri);
+        TextView imella = findViewById(R.id.imella);
+        TextView viti = findViewById(R.id.viti);
+        String userEmail = FirebaseAuth.getInstance().getCurrentUser().getEmail();
+        readData(new ProfileActivity.FirestoreCallback() {
             @Override
             public void onCallback(List<Student> list) {
 
-                personalInformation.addAll(list);
-
-                for (Student student : personalInformation) {
-                    String firstName = student.getFirstName();
-                    String lastName = student.getLastName();
-                    // Process student data as needed
-
-
+                String firstName = "";
+                String lastName = "";
+                Integer yearLevel = 0;
+                for (Student student : list) {
+                    firstName = student.getFirstName();
+                    lastName = student.getLastName();
+                    yearLevel = student.getYearLevel();
                 }
-                AdapterStudent adapter = new AdapterStudent(Profile.this, personalInformation);
-                ListView listView = (ListView) findViewById(R.id.list_view);
-
-                listView.setAdapter(adapter);
-                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-
-                    }
-                });
-
+                emri.setText(firstName);
+                mbiemri.setText(lastName);
+                viti.setText(Integer.toString(yearLevel));
+                imella.setText(userEmail);
 
             }
         });
     }
 
-    ;
-
-
-    private void readData(Profile.FirestoreCallback firestoreCallBack) {
+    private void readData(ProfileActivity.FirestoreCallback firestoreCallBack) {
         CollectionReference collectionRef = db.collection("student");
         collectionRef.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
@@ -83,24 +68,8 @@ public class Profile extends AppCompatActivity {
         });
     }
 
-
     private interface FirestoreCallback {
         void onCallback(List<Student> list);
     }
-
-
-    @Override
-    public void finish() {
-        super.finish();
-        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        finish();
-        return super.onOptionsItemSelected(item);
-
-    }
-
 
 }

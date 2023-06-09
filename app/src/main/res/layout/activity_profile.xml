@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Profile">
+    tools:context=".ProfileActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/linearLayout"
@@ -49,8 +49,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:src="@drawable/brian"
-                   />
+                    android:src="@drawable/brian" />
 
             </androidx.cardview.widget.CardView>
 
@@ -87,21 +86,20 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/TV_display_country"
+                    android:id="@+id/emri_titull"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
-                    android:text="@string/display_country"
+                    android:text="Emri"
                     android:textAllCaps="false"
                     android:textSize="14sp" />
 
                 <TextView
-                    android:id="@+id/TV_country"
+                    android:id="@+id/emri"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:text="@string/profile_country"
                     android:textColor="@android:color/black"
                     android:textSize="18sp" />
 
@@ -114,20 +112,19 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/TV_display_username"
+                    android:id="@+id/mbiemri_titull"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
-                    android:text="@string/display_slack_username"
+                    android:text="Mbiemri"
                     android:textAllCaps="false" />
 
                 <TextView
-                    android:id="@+id/TV_username"
+                    android:id="@+id/mbiemri"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:text="@string/profile_slack_username"
                     android:textColor="@android:color/black"
                     android:textSize="18sp" />
 
@@ -136,7 +133,7 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/TV_display_email"
+            android:id="@+id/imella_titull"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -145,29 +142,27 @@
             android:textAllCaps="false" />
 
         <TextView
-            android:id="@+id/TV_email"
+            android:id="@+id/imella"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:text="@string/profile_email"
             android:textColor="@android:color/black"
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/TV_display_number"
+            android:id="@+id/viti_titull"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:text="@string/display_number"
+            android:text="Viti i studimeve"
             android:textAllCaps="false" />
 
         <TextView
-            android:id="@+id/TV_number"
+            android:id="@+id/viti"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:text="@string/profile_number"
             android:textColor="@android:color/black"
             android:textSize="18sp" />
 
