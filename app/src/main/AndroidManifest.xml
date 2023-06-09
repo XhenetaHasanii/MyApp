@@ -15,8 +15,10 @@
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
-            android:name=".Test"
+            android:name=".Profile"
             android:exported="false" />
+
+
         <activity
             android:name=".NovemberPeriod"
             android:exported="false" />
@@ -34,9 +36,6 @@
             android:exported="false" />
         <activity
             android:name=".ExamPeriodsList"
-            android:exported="false" />
-        <activity
-            android:name=".Menu"
             android:exported="false" />
         <activity
             android:name=".StudentProfile"
