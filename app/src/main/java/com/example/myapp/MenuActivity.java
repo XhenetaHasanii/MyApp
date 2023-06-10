@@ -31,9 +31,24 @@ public class MenuActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.nav_home:
+            case R.id.nav_student_profile:
                 Intent studentProfile = new Intent(this, ProfileActivity.class);
                 startActivity(studentProfile);
+                break;
+
+            case R.id.nav_afatet:
+                Intent afatet = new Intent(this, ExamPeriodsList.class);
+                startActivity(afatet);
+                break;
+
+            case R.id.nav_kalendari:
+                Intent kalendari = new Intent(this, CalendarActivity.class);
+                startActivity(kalendari);
+                break;
+
+            case R.id.nav_mensa:
+                Intent menzat = new Intent(this, MensaMapsActivity.class);
+                startActivity(menzat);
                 break;
         }
         drawerLayout.closeDrawer(GravityCompat.START);
