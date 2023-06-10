@@ -29,8 +29,12 @@ public class ProfiliActivity extends AppCompatActivity {
 
         TextView emri = findViewById(R.id.emri);
         TextView mbiemri = findViewById(R.id.mbiemri);
-        TextView imella = findViewById(R.id.imella);
-        TextView viti = findViewById(R.id.viti);
+        TextView imella = findViewById(R.id.email);
+        TextView viti = findViewById(R.id.vitiStudimeve);
+        TextView datelindja=findViewById(R.id.datelindja);
+        TextView telNumri=findViewById(R.id.tel);
+        TextView adresa=findViewById(R.id.adresa);
+        TextView numriPersonal=findViewById(R.id.nrPersonal);
         String userEmail = FirebaseAuth.getInstance().getCurrentUser().getEmail();
         readData(new ProfiliActivity.FirestoreCallback() {
             @Override
@@ -39,15 +43,28 @@ public class ProfiliActivity extends AppCompatActivity {
                 String firstName = "";
                 String lastName = "";
                 Integer yearLevel = 0;
+                String address="";
+                String birthDate="";
+                Integer phoneNumber=0;
+                Integer personalNumber=0;
                 for (Student student : list) {
                     firstName = student.getFirstName();
                     lastName = student.getLastName();
                     yearLevel = student.getYearLevel();
+                    address=student.getAddress();
+                    birthDate=student.getBirthDate();
+                    phoneNumber=student.getPhoneNumber();
+                    personalNumber=student.getPersonalNumber();
                 }
                 emri.setText(firstName);
                 mbiemri.setText(lastName);
                 viti.setText(Integer.toString(yearLevel));
                 imella.setText(userEmail);
+                datelindja.setText(birthDate);
+                 telNumri.setText(Integer.toString(phoneNumber));
+                adresa.setText(address);
+                 numriPersonal.setText(Integer.toString(personalNumber));
+
 
             }
         });
