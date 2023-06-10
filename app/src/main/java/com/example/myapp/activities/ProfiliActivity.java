@@ -1,9 +1,12 @@
-package com.example.myapp;
+package com.example.myapp.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
+
+import com.example.myapp.R;
+import com.example.myapp.entities.Student;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -14,11 +17,9 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProfileActivity extends AppCompatActivity {
+public class ProfiliActivity extends AppCompatActivity {
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     private List<Student> personalInformation;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +32,7 @@ public class ProfileActivity extends AppCompatActivity {
         TextView imella = findViewById(R.id.imella);
         TextView viti = findViewById(R.id.viti);
         String userEmail = FirebaseAuth.getInstance().getCurrentUser().getEmail();
-        readData(new ProfileActivity.FirestoreCallback() {
+        readData(new ProfiliActivity.FirestoreCallback() {
             @Override
             public void onCallback(List<Student> list) {
 
@@ -52,7 +53,7 @@ public class ProfileActivity extends AppCompatActivity {
         });
     }
 
-    private void readData(ProfileActivity.FirestoreCallback firestoreCallBack) {
+    private void readData(ProfiliActivity.FirestoreCallback firestoreCallBack) {
         CollectionReference collectionRef = db.collection("student");
         collectionRef.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override

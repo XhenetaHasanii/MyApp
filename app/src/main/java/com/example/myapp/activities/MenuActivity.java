@@ -1,4 +1,4 @@
-package com.example.myapp;
+package com.example.myapp.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -9,6 +9,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import androidx.appcompat.widget.Toolbar;
+
+import com.example.myapp.R;
 import com.google.android.material.navigation.NavigationView;
 
 public class MenuActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
@@ -31,9 +33,24 @@ public class MenuActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.nav_home:
-                Intent studentProfile = new Intent(this, ProfileActivity.class);
+            case R.id.nav_student_profile:
+                Intent studentProfile = new Intent(this, ProfiliActivity.class);
                 startActivity(studentProfile);
+                break;
+
+            case R.id.nav_afatet:
+                Intent afatet = new Intent(this, AfateActivity.class);
+                startActivity(afatet);
+                break;
+
+            case R.id.nav_kalendari:
+                Intent kalendari = new Intent(this, CalendarActivity.class);
+                startActivity(kalendari);
+                break;
+
+            case R.id.nav_mensa:
+                Intent menzat = new Intent(this, MensaMapsActivity.class);
+                startActivity(menzat);
                 break;
         }
         drawerLayout.closeDrawer(GravityCompat.START);

@@ -1,7 +1,7 @@
-package com.example.myapp;
+package com.example.myapp.activities;
 
-import static com.example.myapp.CalendarUtils.daysInWeekArray;
-import static com.example.myapp.CalendarUtils.monthYearFromDate;
+import static com.example.myapp.helpers.CalendarUtils.daysInWeekArray;
+import static com.example.myapp.helpers.CalendarUtils.monthYearFromDate;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -10,6 +10,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import com.example.myapp.helpers.CalendarUtils;
+import com.example.myapp.R;
+import com.example.myapp.adapters.CalendarAdapter;
+import com.example.myapp.adapters.EventAdapter;
+import com.example.myapp.dto.EventDTO;
+import com.example.myapp.entities.Event;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.CollectionReference;

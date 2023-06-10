@@ -1,5 +1,4 @@
-package com.example.myapp;
-
+package com.example.myapp.adapters;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,13 +10,18 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.core.content.ContextCompat;
 
-class CustomBaseAdapter extends BaseAdapter {
+import com.example.myapp.activities.AfateActivity;
+import com.example.myapp.R;
+
+
+public class AfateAdapter extends BaseAdapter {
+
     String examPeriods[];
-    ExamPeriodsList listViewMain;
+    AfateActivity afateActivity;
     Animation animation1;
 
-    public CustomBaseAdapter(ExamPeriodsList listViewMain, String examPeriods[]) {
-        this.listViewMain = listViewMain;
+    public AfateAdapter(AfateActivity afateActivity, String examPeriods[]) {
+        this.afateActivity = afateActivity;
         this.examPeriods = examPeriods;
     }
 
@@ -43,32 +47,31 @@ class CustomBaseAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        convertView = LayoutInflater.from(listViewMain).inflate(R.layout.exam_periods, parent, false);
-        animation1 = AnimationUtils.loadAnimation(listViewMain, R.anim.animation1);
+        convertView = LayoutInflater.from(afateActivity).inflate(R.layout.exam_periods, parent, false);
+        animation1 = AnimationUtils.loadAnimation(afateActivity, R.anim.animation1);
         TextView textView = convertView.findViewById(R.id.periods);
         LinearLayout ll_bg;
         ll_bg = convertView.findViewById(R.id.ll_bg);
         int number = getRandom(5);
         if (number == 1) {
-            ll_bg.setBackground(ContextCompat.getDrawable(listViewMain, R.drawable.gradient_1));
+            ll_bg.setBackground(ContextCompat.getDrawable(afateActivity, R.drawable.gradient_1));
         }
         if (number == 2) {
-            ll_bg.setBackground(ContextCompat.getDrawable(listViewMain, R.drawable.gradient_2));
+            ll_bg.setBackground(ContextCompat.getDrawable(afateActivity, R.drawable.gradient_2));
         }
         if (number == 3) {
-            ll_bg.setBackground(ContextCompat.getDrawable(listViewMain, R.drawable.gradient_3));
+            ll_bg.setBackground(ContextCompat.getDrawable(afateActivity, R.drawable.gradient_3));
         }
         if (number == 4) {
-            ll_bg.setBackground(ContextCompat.getDrawable(listViewMain, R.drawable.gradient_4));
+            ll_bg.setBackground(ContextCompat.getDrawable(afateActivity, R.drawable.gradient_4));
         }
         if (number == 5) {
-            ll_bg.setBackground(ContextCompat.getDrawable(listViewMain, R.drawable.gradient_4));
+            ll_bg.setBackground(ContextCompat.getDrawable(afateActivity, R.drawable.gradient_4));
         }
+
         textView.setText(examPeriods[position]);
         return convertView;
 
     }
 
 }
-
-

@@ -1,4 +1,4 @@
-package com.example.myapp;
+package com.example.myapp.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,6 +8,11 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+
+import com.example.myapp.helpers.CalendarUtils;
+import com.example.myapp.R;
+import com.example.myapp.entities.Event;
+
 import java.util.List;
 
 public class EventAdapter extends ArrayAdapter<Event> {

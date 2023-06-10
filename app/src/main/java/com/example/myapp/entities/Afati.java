@@ -1,4 +1,6 @@
-package com.example.myapp;
+package com.example.myapp.entities;
+
+import com.example.myapp.entities.Provimi;
 
 import java.util.List;
 

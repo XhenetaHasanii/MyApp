@@ -1,6 +1,9 @@
-package com.example.myapp;
+package com.example.myapp.activities;
 
 import android.os.Bundle;
+
+import com.example.myapp.R;
+import com.example.myapp.entities.Menza;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
 import androidx.annotation.NonNull;
