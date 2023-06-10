@@ -1,9 +1,13 @@
-package com.example.myapp;
+package com.example.myapp.helpers;
 
 import android.view.View;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.myapp.R;
+import com.example.myapp.adapters.CalendarAdapter;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 

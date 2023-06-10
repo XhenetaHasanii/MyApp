@@ -1,4 +1,4 @@
-package com.example.myapp;
+package com.example.myapp.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.myapp.R;
 import com.google.android.gms.tasks.OnCanceledListener;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -19,7 +20,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 
-public class Login extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
     private static final String TAG = "EmailPassword";
     private FirebaseAuth mAuth;
@@ -46,21 +47,21 @@ public class Login extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
-                                startActivity(new Intent(Login.this, MenuActivity.class));
+                                startActivity(new Intent(LoginActivity.this, MenuActivity.class));
                                 finish();
                             } else {
-                                Toast.makeText(Login.this, "Something went wrong", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginActivity.this, "Something went wrong", Toast.LENGTH_SHORT).show();
                             }
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(Login.this, "Error", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, "Error", Toast.LENGTH_SHORT).show();
                         }
                     }).addOnCanceledListener(new OnCanceledListener() {
                         @Override
                         public void onCanceled() {
-                            Toast.makeText(Login.this, "Canceled", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, "Canceled", Toast.LENGTH_SHORT).show();
                         }
                     });
                 }

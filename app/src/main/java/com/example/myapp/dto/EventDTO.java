@@ -1,4 +1,4 @@
-package com.example.myapp;
+package com.example.myapp.dto;
 
 import java.util.Date;
 public class EventDTO {

@@ -7,7 +7,11 @@
         android:checkableBehavior="single">
         <item
             android:id="@+id/nav_student_profile"
+<<<<<<< HEAD
+            android:icon="@drawable/baseline_person_24"
+=======
             android:icon="@drawable/baseline_personal_injury_24"
+>>>>>>> bcaa56900cf183f058f385341fe0f8caa5269295
             android:title="Profili"/>
         <item
             android:id="@+id/nav_afatet"
@@ -15,11 +19,19 @@
             android:title="Afatet"/>
         <item
             android:id="@+id/nav_kalendari"
+<<<<<<< HEAD
+            android:icon="@drawable/baseline_person_24"
+            android:title="Kalendari"/>
+        <item
+            android:id="@+id/nav_mensa"
+            android:icon="@drawable/baseline_person_24"
+=======
             android:icon="@drawable/baseline_calendar_month_24"
             android:title="Kalendari"/>
         <item
             android:id="@+id/nav_mensa"
             android:icon="@drawable/baseline_location_on_24"
+>>>>>>> bcaa56900cf183f058f385341fe0f8caa5269295
             android:title="Menzat"/>
     </group>
     <item

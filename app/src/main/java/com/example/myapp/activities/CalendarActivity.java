@@ -1,8 +1,8 @@
-package com.example.myapp;
+package com.example.myapp.activities;
 
 
-import static com.example.myapp.CalendarUtils.daysInMonthArray;
-import static com.example.myapp.CalendarUtils.monthYearFromDate;
+import static com.example.myapp.helpers.CalendarUtils.daysInMonthArray;
+import static com.example.myapp.helpers.CalendarUtils.monthYearFromDate;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -11,6 +11,11 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+
+import com.example.myapp.helpers.CalendarUtils;
+import com.example.myapp.R;
+import com.example.myapp.adapters.CalendarAdapter;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 

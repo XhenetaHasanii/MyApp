@@ -5,6 +5,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+
+import com.example.myapp.entities.Provimi;
+
 import java.util.ArrayList;
 
 public class JanuaryPeriod extends AppCompatActivity  {
@@ -18,9 +21,9 @@ public class JanuaryPeriod extends AppCompatActivity  {
 
         ArrayList<Provimi> periodExams = getIntent().getParcelableArrayListExtra("provimet");
         //ne qit list periodExams i ki provimet si objekte, mrena seciit objekt e ki emrin e provimit edhe daten, shfaqe ne nje list view per userin<Provimi> arr;
-        Adapter adapter=new Adapter(JanuaryPeriod.this,periodExams);
+        //Adapter adapter=new Adapter(JanuaryPeriod.this,periodExams);
         ListView listView1= (ListView)findViewById(R.id.list);
-        listView1.setAdapter(adapter);
+        //listView1.setAdapter(adapter);
         listView1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -35,8 +38,7 @@ public class JanuaryPeriod extends AppCompatActivity  {
 
 
 
-}
-
+    }
     }
 
 

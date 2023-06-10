@@ -15,44 +15,29 @@
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
-            android:name=".MenuActivity"
+            android:name=".activities.MenuActivity"
             android:exported="false" />
         <activity
-            android:name=".ProfileActivity"
-            android:exported="false" />
-        <activity
-            android:name=".NovemberPeriod"
-            android:exported="false" />
-        <activity
-            android:name=".SeptemberPeriod"
-            android:exported="false" />
-        <activity
-            android:name=".JunePeriod"
-            android:exported="false" />
-        <activity
-            android:name=".AprilPeriod"
+            android:name=".activities.ProfiliActivity"
             android:exported="false" />
         <activity
             android:name=".JanuaryPeriod"
             android:exported="false" />
         <activity
-            android:name=".ExamPeriodsList"
+            android:name=".activities.AfateActivity"
             android:exported="false" />
         <activity
-            android:name=".StudentProfile"
-            android:exported="false" />
-        <activity
-            android:name=".MensaMapsActivity"
+            android:name=".activities.MensaMapsActivity"
             android:exported="false" />
         <!--
  <activity
             android:name=".MainActivityLogin"
             android:exported="false" />
         -->
-        <activity android:name=".WeekViewActivity" />
-        <activity android:name=".CalendarActivity" />
+        <activity android:name=".activities.WeekViewActivity" />
+        <activity android:name=".activities.CalendarActivity" />
         <activity
-            android:name=".Login"
+            android:name=".activities.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

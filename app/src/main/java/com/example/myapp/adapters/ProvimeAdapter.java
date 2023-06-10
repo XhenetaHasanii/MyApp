@@ -1,4 +1,4 @@
-package com.example.myapp;
+package com.example.myapp.adapters;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,16 +9,21 @@ import android.widget.BaseAdapter;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.core.content.ContextCompat;
+
+import com.example.myapp.activities.AfateActivity;
+import com.example.myapp.R;
+import com.example.myapp.entities.Provimi;
+
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Adapter extends BaseAdapter {
-    JanuaryPeriod listViewMain1;
+public class ProvimeAdapter extends BaseAdapter {
+    AfateActivity listViewMain1;
     ArrayList<Provimi> periodExams;
     Animation animation1;
 
-    public Adapter(JanuaryPeriod januaryPeriod, ArrayList<Provimi> periodExams) {
-        this.listViewMain1=januaryPeriod;
+    public ProvimeAdapter(AfateActivity afateActivity, ArrayList<Provimi> periodExams) {
+        this.listViewMain1=afateActivity;
         this.periodExams=periodExams;
 
     }
