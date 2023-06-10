@@ -21,13 +21,13 @@
             android:name=".activities.ProfiliActivity"
             android:exported="false" />
         <activity
-            android:name=".JanuaryPeriod"
-            android:exported="false" />
-        <activity
             android:name=".activities.AfateActivity"
             android:exported="false" />
         <activity
             android:name=".activities.MensaMapsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.ProvimetActivity"
             android:exported="false" />
         <!--
  <activity

@@ -10,7 +10,6 @@ import android.widget.ListView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.myapp.JanuaryPeriod;
 import com.example.myapp.R;
 import com.example.myapp.adapters.AfateAdapter;
 import com.example.myapp.entities.Afati;
@@ -60,7 +59,7 @@ public class AfateActivity extends AppCompatActivity {
                                examPeriods[position].contains("Prill")){
                             Intent intent=new Intent(ExamPeriodsList.this,AprilPeriod.class);
                             startActivity(intent);}*/
-                            Intent intent=new Intent(AfateActivity.this,JanuaryPeriod.class);
+                            Intent intent=new Intent(AfateActivity.this,ProvimetActivity.class);
                             intent.putParcelableArrayListExtra("provimet", (ArrayList<? extends Parcelable>) list.get(0).getPeriodExams());
                             startActivity(intent);
                         }
