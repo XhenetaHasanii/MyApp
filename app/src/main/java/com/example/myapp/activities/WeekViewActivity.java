@@ -6,6 +6,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
@@ -49,10 +51,19 @@ public class WeekViewActivity extends AppCompatActivity implements CalendarAdapt
             @Override
             public void onCallback(List<EventDTO> list) {
                 for (int i = 0; i < list.size();++i){
-                        LocalDateTime tempDate = LocalDateTime.ofInstant(list.get(i).getOrari().toInstant(), ZoneId.systemDefault());
-                        LocalDate temp2 = tempDate.toLocalDate();
-                        LocalTime temp3 = tempDate.toLocalTime();
-                        String tempName = list.get(i).getEmri();
+                    LocalDateTime tempDate = null;
+                    if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                        tempDate = LocalDateTime.ofInstant(list.get(i).getOrari().toInstant(), ZoneId.systemDefault());
+                    }
+                    LocalDate temp2 = null;
+                    if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                        temp2 = tempDate.toLocalDate();
+                    }
+                    LocalTime temp3 = null;
+                    if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                        temp3 = tempDate.toLocalTime();
+                    }
+                    String tempName = list.get(i).getEmri();
                         Event tempEvent = new Event(tempName,temp2,temp3);
                         Event.eventsList.add(tempEvent);
                         dailyEvents.add(tempEvent);
@@ -84,12 +95,16 @@ public class WeekViewActivity extends AppCompatActivity implements CalendarAdapt
 
 
     public void nextWeekAction(View view) {
-        CalendarUtils.selectedDate = CalendarUtils.selectedDate.plusWeeks(1);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            CalendarUtils.selectedDate = CalendarUtils.selectedDate.plusWeeks(1);
+        }
         setWeekView();
     }
 
     public void previousWeekAction(View view) {
-        CalendarUtils.selectedDate = CalendarUtils.selectedDate.minusWeeks(1);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            CalendarUtils.selectedDate = CalendarUtils.selectedDate.minusWeeks(1);
+        }
         setWeekView();
     }
 
