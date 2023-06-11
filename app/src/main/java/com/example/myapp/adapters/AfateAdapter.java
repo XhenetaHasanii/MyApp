@@ -37,7 +37,7 @@ public class AfateAdapter extends BaseAdapter {
 
     @Override
     public Object getItem(int i) {
-        return i;
+        return examPeriods[i];
     }
 
     @Override

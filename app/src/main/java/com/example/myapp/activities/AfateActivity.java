@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.myapp.R;
 import com.example.myapp.adapters.AfateAdapter;
 import com.example.myapp.entities.Afati;
+import com.example.myapp.entities.Provimi;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.CollectionReference;
@@ -50,17 +51,15 @@ public class AfateActivity extends AppCompatActivity {
                     listView1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                        /*if(
-                            examPeriods[position].contains("Janar")){
-                        Intent intent=new Intent(ExamPeriodsList.this,JanuaryPeriod.class);
-                        startActivity(intent);}
-                       else if(
-                               examPeriods[position].contains("Prill")){
-                            Intent intent=new Intent(ExamPeriodsList.this,AprilPeriod.class);
-                            startActivity(intent);}*/
+                            String item = (String) adapter.getItem(position);
+                            List <Provimi> tempList = null;
+                            for ( Afati a: list){
+                                if (a.getExamPeriodName().equals(item)){
+                                    tempList = a.getPeriodExams();
+                                }
+                            }
                             Intent intent=new Intent(AfateActivity.this,ProvimetActivity.class);
-                            intent.putParcelableArrayListExtra("provimet", (ArrayList<? extends Parcelable>) list.get(0).getPeriodExams());
+                            intent.putParcelableArrayListExtra("provimet", (ArrayList<? extends Parcelable>) tempList);
                             startActivity(intent);
                         }
                     });
