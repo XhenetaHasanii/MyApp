@@ -49,10 +49,10 @@ public class AfateAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         convertView = LayoutInflater.from(afateActivity).inflate(R.layout.exam_periods, parent, false);
         animation1 = AnimationUtils.loadAnimation(afateActivity, R.anim.animation1);
-        TextView textView = convertView.findViewById(R.id.periods);
+        TextView textView = convertView.findViewById(R.id.listName);
         LinearLayout ll_bg;
-        ll_bg = convertView.findViewById(R.id.ll_bg);
-        int number = getRandom(5);
+
+        /*nt number = getRandom(5);
         if (number == 1) {
             ll_bg.setBackground(ContextCompat.getDrawable(afateActivity, R.drawable.gradient_1));
         }
@@ -67,7 +67,7 @@ public class AfateAdapter extends BaseAdapter {
         }
         if (number == 5) {
             ll_bg.setBackground(ContextCompat.getDrawable(afateActivity, R.drawable.gradient_4));
-        }
+        }*/
 
         textView.setText(examPeriods[position]);
         return convertView;
