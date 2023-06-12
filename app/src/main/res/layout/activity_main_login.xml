@@ -46,7 +46,7 @@
                 android:background="@drawable/custom_edittext"
                 android:layout_marginTop="40dp"
                 android:padding="8dp"
-                android:hint=""
+                android:hint="Email"
                 android:drawableLeft="@drawable/baseline_person_24"
                 android:drawablePadding="9dp"
                 />
@@ -69,7 +69,7 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:text="Qasja"
+                android:text="Login"
                 android:id="@+id/loginBtn"
                 android:textSize="18sp"
                 android:layout_marginTop="30dp"

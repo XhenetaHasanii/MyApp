@@ -20,25 +20,31 @@
             android:layout_gravity="center"
             android:id="@+id/imageView"
             android:layout_marginTop="100dp"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Universiteti i Prishtinës"
-        android:gravity="center"
-        android:id="@+id/textViewUniversityName"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Universiteti i Prishtinës"
+            android:gravity="center"
+            android:id="@+id/textViewUniversityName"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="HI"
             android:layout_marginTop="100dp"
             android:layout_gravity="center"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Kontakti"
+            android:layout_marginTop="100dp"
+            android:layout_gravity="center"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="&quot;Hasan Prishtina&quot;"
-        android:gravity="center"
-        android:id="@+id/textViewFullName"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="&quot;Hasan Prishtina&quot;"
+            android:gravity="center"
+            android:id="@+id/textViewFullName"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"

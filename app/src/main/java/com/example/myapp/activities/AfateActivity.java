@@ -5,7 +5,10 @@ import android.os.Bundle;
 import android.os.Parcelable;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,7 +27,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AfateActivity extends AppCompatActivity {
-
+    AutoCompleteTextView autoCompleteTxt;
+    ArrayAdapter<String> adapterItems;
+    List<String> items;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     private List<Afati> examPeriodDocuments;
 
@@ -32,45 +37,35 @@ public class AfateActivity extends AppCompatActivity {
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.exam_period_list);
+            items=new ArrayList<>();
             examPeriodDocuments = new ArrayList<>();
+            autoCompleteTxt = findViewById(R.id.auto_complete_txt);
             readData(new FirestoreCallback() {
-                @Override
-                public void onCallback(List<Afati> list) {
-                    String[] examPeriods = new String[list.size()];
-                    for (int i = 0; i < list.size(); ++i) {
-                        examPeriods[i] = list.get(i).getExamPeriodName();
-                    }
-                    for (String s : examPeriods) {
-                        System.out.println(s);
-                    }
+                         @Override
+                         public void onCallback(List<Afati> list) {
+                           /*  String[] examPeriods = new String[list.size()];*/
+                             List<String> examPeriods=new ArrayList<>();
+                             for (int i = 0; i < list.size(); ++i) {
+                                 /*examPeriods[i] = list.get(i).getExamPeriodName();*/
+                                 examPeriods.add(list.get(i).getExamPeriodName());
+                             }
+                             adapterItems = new ArrayAdapter<String>(AfateActivity.this, R.layout.list_item,examPeriods);
+                             autoCompleteTxt.setAdapter(adapterItems);
 
-                    AfateAdapter adapter = new AfateAdapter(AfateActivity.this,examPeriods);
-                    ListView listView1= findViewById(R.id.list_view);
-                    listView1.setAdapter(adapter);
+                             /*Intent intent=new Intent(AfateActivity.this,JanuaryPeriod.class);
+                             intent.putParcelableArrayListExtra("provimet", (ArrayList<? extends Parcelable>) list.get(0).getPeriodExams());
+                             startActivity(intent);
+*/
 
-                    listView1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                        @Override
-                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                         }
+                     } );
 
-                        /*if(
-                            examPeriods[position].contains("Janar")){
-                        Intent intent=new Intent(ExamPeriodsList.this,JanuaryPeriod.class);
-                        startActivity(intent);}
-                       else if(
-                               examPeriods[position].contains("Prill")){
-                            Intent intent=new Intent(ExamPeriodsList.this,AprilPeriod.class);
-                            startActivity(intent);}*/
-                            Intent intent=new Intent(AfateActivity.this,JanuaryPeriod.class);
-                            intent.putParcelableArrayListExtra("provimet", (ArrayList<? extends Parcelable>) list.get(0).getPeriodExams());
-                            startActivity(intent);
-                        }
-                    });
-                }
-            });
+
+
         }
 
         private void readData(FirestoreCallback firestoreCallback) {
-            CollectionReference collectionRef = db.collection("afati");
+           CollectionReference collectionRef = db.collection("afati");
             collectionRef.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                 @Override
                 public void onComplete(@NonNull Task<QuerySnapshot> task) {
