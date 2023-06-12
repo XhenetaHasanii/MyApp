@@ -56,7 +56,7 @@ public class ProvimeAdapter extends BaseAdapter {
         animation1 = AnimationUtils.loadAnimation(provimetActivity, R.anim.animation1);
         TextView textView = convertView.findViewById(R.id.list_view);
         LinearLayout ll_bg;
-        /*ll_bg = convertView.findViewById(R.id.ll_bg);
+        ll_bg = convertView.findViewById(R.id.ll_bg);
         int number = getRandom(5);
         if (number == 1) {
             ll_bg.setBackground(ContextCompat.getDrawable(provimetActivity, R.drawable.gradient_1));
@@ -72,13 +72,12 @@ public class ProvimeAdapter extends BaseAdapter {
         }
         if (number == 5) {
             ll_bg.setBackground(ContextCompat.getDrawable(provimetActivity, R.drawable.gradient_4));
-        }*/
+        }
         Provimi provimi = periodExams.get(position);
         String itemText = provimi.getExamName();
         DateTime dateTime = new DateTime(provimi.getExamTime());
         String datePattern = "dd.MM.yyyy HH:mm";
         String dateString = dateTime.toString(datePattern);
-
 
         textView.setText(itemText + "   " +dateString);
         return convertView;
