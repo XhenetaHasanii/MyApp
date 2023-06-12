@@ -54,9 +54,9 @@ public class ProvimeAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         convertView = LayoutInflater.from(provimetActivity).inflate(R.layout.exam_periods, parent, false);
         animation1 = AnimationUtils.loadAnimation(provimetActivity, R.anim.animation1);
-        TextView textView = convertView.findViewById(R.id.periods);
+        TextView textView = convertView.findViewById(R.id.list_view);
         LinearLayout ll_bg;
-        ll_bg = convertView.findViewById(R.id.ll_bg);
+        /*ll_bg = convertView.findViewById(R.id.ll_bg);
         int number = getRandom(5);
         if (number == 1) {
             ll_bg.setBackground(ContextCompat.getDrawable(provimetActivity, R.drawable.gradient_1));
@@ -72,7 +72,7 @@ public class ProvimeAdapter extends BaseAdapter {
         }
         if (number == 5) {
             ll_bg.setBackground(ContextCompat.getDrawable(provimetActivity, R.drawable.gradient_4));
-        }
+        }*/
         Provimi provimi = periodExams.get(position);
         String itemText = provimi.getExamName();
         DateTime dateTime = new DateTime(provimi.getExamTime());
