@@ -54,7 +54,7 @@ public class ProvimeAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         convertView = LayoutInflater.from(provimetActivity).inflate(R.layout.exam_periods, parent, false);
         animation1 = AnimationUtils.loadAnimation(provimetActivity, R.anim.animation1);
-        TextView textView = convertView.findViewById(R.id.list_view);
+        TextView textView = convertView.findViewById(R.id.periods);
         LinearLayout ll_bg;
         ll_bg = convertView.findViewById(R.id.ll_bg);
         int number = getRandom(5);
