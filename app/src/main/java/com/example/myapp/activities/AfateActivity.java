@@ -7,8 +7,10 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.myapp.R;
 import com.example.myapp.entities.Afati;
 import com.example.myapp.entities.Provimi;
@@ -18,6 +20,7 @@ import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -60,12 +63,8 @@ public class AfateActivity extends AppCompatActivity {
                         startActivity(intent);
                     }
                 });
-
             }
-
         });
-
-
     }
 
     private void readData(FirestoreCallback firestoreCallback) {
