@@ -1,6 +1,8 @@
 package com.example.myapp.activities;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import com.example.myapp.R;
 import com.example.myapp.entities.Menza;
@@ -34,6 +36,13 @@ public class MensaMapsActivity  extends AppCompatActivity implements OnMapReadyC
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.maps);
         mapFragment.getMapAsync(this);
         menzat = new ArrayList<>();
+        Button backButton = (Button) findViewById(R.id.back_to_menu_from_menza);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
     }
 
 

@@ -20,7 +20,7 @@ public class ProvimetActivity extends AppCompatActivity {
 
         ArrayList<Provimi> periodExams = getIntent().getParcelableArrayListExtra("provimet");
         ProvimeAdapter adapter = new ProvimeAdapter(ProvimetActivity.this, periodExams);
-        ListView listView1 = (ListView) findViewById(R.id.list);
+        ListView listView1 = (ListView) findViewById(R.id.exam_list);
         listView1.setAdapter(adapter);
         listView1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

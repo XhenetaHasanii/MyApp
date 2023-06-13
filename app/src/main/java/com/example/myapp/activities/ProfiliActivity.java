@@ -3,6 +3,8 @@ package com.example.myapp.activities;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.myapp.R;
@@ -36,6 +38,13 @@ public class ProfiliActivity extends AppCompatActivity {
         TextView adresa=findViewById(R.id.adresa);
         TextView numriPersonal=findViewById(R.id.nrPersonal);
         String userEmail = FirebaseAuth.getInstance().getCurrentUser().getEmail();
+        Button backButton = (Button) findViewById(R.id.back_to_menu_from_profile);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
         readData(new ProfiliActivity.FirestoreCallback() {
             @Override
             public void onCallback(List<Student> list) {
