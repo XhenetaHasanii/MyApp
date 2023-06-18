@@ -1,45 +1,45 @@
 package com.example.myapp.entities;
 
-import com.example.myapp.entities.Provimi;
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
-import java.util.List;
-
+@Entity(tableName = "Afati")
 public class Afati {
 
+    @PrimaryKey(autoGenerate = true)
+    private int id;
+    @ColumnInfo(name="examPeriodName")
     private String examPeriodName;
-    private List<Provimi> periodExams;
 
-    public Afati(String examPeriodName, List<Provimi> periodExams) {
+    public Afati(String examPeriodName) {
         this.examPeriodName = examPeriodName;
-        this.periodExams = periodExams;
     }
 
     public Afati() {
     }
 
-    @Override
-    public String toString() {
-        return "Afati{" +
-                "examPeriodName='" + examPeriodName + '\'' +
-                ", periodExams=" + periodExams +
-                '}';
+    public int getId() {
+        return id;
     }
 
-    public void setExamPeriodName(String examPeriodName) {
-        this.examPeriodName = examPeriodName;
-    }
-
-    public void setPeriodExams(List<Provimi> periodExams) {
-        this.periodExams = periodExams;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getExamPeriodName() {
         return examPeriodName;
     }
 
-    public List<Provimi> getPeriodExams() {
-        return periodExams;
+    public void setExamPeriodName(String examPeriodName) {
+        this.examPeriodName = examPeriodName;
     }
 
-
+    @Override
+    public String toString() {
+        return "Afati{" +
+                "id=" + id +
+                ", examPeriodName='" + examPeriodName + '\'' +
+                '}';
+    }
 }

@@ -2,10 +2,6 @@ package com.example.myapp.activities;
 
 import static com.example.myapp.helpers.CalendarUtils.daysInWeekArray;
 import static com.example.myapp.helpers.CalendarUtils.monthYearFromDate;
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Build;
 import android.os.Bundle;
@@ -13,18 +9,17 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.example.myapp.helpers.CalendarUtils;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.myapp.R;
 import com.example.myapp.adapters.CalendarAdapter;
 import com.example.myapp.adapters.EventAdapter;
 import com.example.myapp.dto.EventDTO;
 import com.example.myapp.entities.Event;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.firestore.CollectionReference;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QuerySnapshot;
+import com.example.myapp.helpers.CalendarUtils;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -36,7 +31,6 @@ public class WeekViewActivity extends AppCompatActivity implements CalendarAdapt
     private TextView monthYearText;
     private RecyclerView calendarRecyclerView;
     private ListView eventListView;
-    FirebaseFirestore db = FirebaseFirestore.getInstance();
     private List<EventDTO> eventDTOs;
 
     @Override
@@ -47,7 +41,7 @@ public class WeekViewActivity extends AppCompatActivity implements CalendarAdapt
         eventDTOs = new ArrayList<>();
         ArrayList<Event> dailyEvents = Event.eventsForDate(CalendarUtils.selectedDate);
 
-        readData(new WeekViewActivity.FirestoreCallback(){
+        /*readData(new WeekViewActivity.FirestoreCallback(){
             @Override
             public void onCallback(List<EventDTO> list) {
                 for (int i = 0; i < list.size();++i){
@@ -73,7 +67,7 @@ public class WeekViewActivity extends AppCompatActivity implements CalendarAdapt
             }
         });
 
-
+*/
     }
 
     private void initWidgets() {
@@ -120,22 +114,4 @@ public class WeekViewActivity extends AppCompatActivity implements CalendarAdapt
         setWeekView();
     }
 
-    private void readData(WeekViewActivity.FirestoreCallback firestoreCallback) {
-        CollectionReference collectionRef = db.collection("event");
-        collectionRef.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                if (task.isSuccessful()) {
-                    for (DocumentSnapshot doc : task.getResult()) {
-                        eventDTOs.add(doc.toObject(EventDTO.class));
-                    }
-                    firestoreCallback.onCallback(eventDTOs);
-                }
-            }
-        });
-    }
-
-    private interface FirestoreCallback {
-        void onCallback(List<EventDTO> list);
-    }
 }

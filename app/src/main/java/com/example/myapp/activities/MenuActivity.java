@@ -1,16 +1,15 @@
 package com.example.myapp.activities;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.example.myapp.R;
 import com.google.android.material.navigation.NavigationView;
@@ -18,10 +17,14 @@ import com.google.android.material.navigation.NavigationView;
 public class MenuActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawerLayout;
 
+    private String username;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
+        Intent intent = getIntent();
+        username = intent.getStringExtra("email");
         Toolbar toolbar = findViewById(R.id.toolbar); //Ignore red line errors
         //setSupportActionBar(toolbar);
         drawerLayout = findViewById(R.id.drawer_layout);
@@ -38,6 +41,7 @@ public class MenuActivity extends AppCompatActivity implements NavigationView.On
         switch (item.getItemId()) {
             case R.id.nav_student_profile:
                 Intent studentProfile = new Intent(this, ProfiliActivity.class);
+                studentProfile.putExtra("userEmail",username);
                 startActivity(studentProfile);
                 break;
 

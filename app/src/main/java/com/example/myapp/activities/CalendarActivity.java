@@ -3,18 +3,20 @@ package com.example.myapp.activities;
 
 import static com.example.myapp.helpers.CalendarUtils.daysInMonthArray;
 import static com.example.myapp.helpers.CalendarUtils.monthYearFromDate;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import com.example.myapp.helpers.CalendarUtils;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.myapp.R;
 import com.example.myapp.adapters.CalendarAdapter;
+import com.example.myapp.helpers.CalendarUtils;
 
 import java.time.LocalDate;
 import java.util.ArrayList;

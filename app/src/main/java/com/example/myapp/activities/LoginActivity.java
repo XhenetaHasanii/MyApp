@@ -1,8 +1,6 @@
 package com.example.myapp.activities;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -11,30 +9,41 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.myapp.R;
-import com.google.android.gms.tasks.OnCanceledListener;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
+import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.myapp.R;
+import com.example.myapp.db.AppDatabase;
+import com.example.myapp.entities.Afati;
+import com.example.myapp.entities.Student;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private static final String TAG = "EmailPassword";
-    private FirebaseAuth mAuth;
-
+    @SuppressLint("WrongThread")
     @Override
     public void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_login);
-        mAuth = FirebaseAuth.getInstance();
+
+        AppDatabase db = AppDatabase.getDbInstance(this.getApplicationContext());
+        db.clearAllTables();
+        db.generalDao().resetSequenceTable();
+        Student student = new Student("test", "test", "test", 1991232, "test", 3, "xheneta.hasani@gmail.com", 044122111, "044567767", "testParent");
+        db.studentDao().insertStudent(student);
+
+        Afati afatiOne = new Afati("Janar");
+        Afati afatiTwo = new Afati("Prill");
+        Afati afatiThree = new Afati("Qershor");
+        Afati afatiFour = new Afati("Shtator");
+        Afati afatiFive = new Afati("Nentor");
+        db.afatiDao().insertAfat(afatiOne);
+        db.afatiDao().insertAfat(afatiTwo);
+        db.afatiDao().insertAfat(afatiThree);
+        db.afatiDao().insertAfat(afatiFour);
+        db.afatiDao().insertAfat(afatiFive);
+
         EditText username = findViewById(R.id.login_email);
         EditText password = findViewById(R.id.login_password);
-
-
         Button login = (Button) findViewById(R.id.loginBtn);
 
         login.setOnClickListener(new View.OnClickListener() {
@@ -43,31 +52,17 @@ public class LoginActivity extends AppCompatActivity {
                 String txt_username = username.getText().toString();
                 String txt_password = password.getText().toString();
                 if (!TextUtils.isEmpty(txt_username) && !TextUtils.isEmpty(txt_password)) {
-                    mAuth.signInWithEmailAndPassword(txt_username, txt_password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (task.isSuccessful()) {
-                                startActivity(new Intent(LoginActivity.this, MenuActivity.class));
-                                finish();
-                            } else {
-                                Toast.makeText(LoginActivity.this, "Something went wrong", Toast.LENGTH_SHORT).show();
-                            }
-                        }
-                    }).addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(LoginActivity.this, "Error", Toast.LENGTH_SHORT).show();
-                        }
-                    }).addOnCanceledListener(new OnCanceledListener() {
-                        @Override
-                        public void onCanceled() {
-                            Toast.makeText(LoginActivity.this, "Canceled", Toast.LENGTH_SHORT).show();
-                        }
-                    });
+                    Student studentTwo = db.studentDao().getStudentByEmailAndPassword(txt_username, txt_password);
+                    if (studentTwo != null) {
+                        startActivity(new Intent(LoginActivity.this, MenuActivity.class).putExtra("email", txt_username));
+                    } else {
+                        Toast.makeText(LoginActivity.this, "Wrong email or password!", Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    Toast.makeText(LoginActivity.this, "Fill out all fields!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
     }
-
 
 }

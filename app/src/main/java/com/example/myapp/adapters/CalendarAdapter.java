@@ -10,9 +10,9 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.myapp.R;
 import com.example.myapp.helpers.CalendarUtils;
 import com.example.myapp.helpers.CalendarViewHolder;
-import com.example.myapp.R;
 
 import java.time.LocalDate;
 import java.util.ArrayList;

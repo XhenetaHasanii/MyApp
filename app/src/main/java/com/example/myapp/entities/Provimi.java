@@ -1,72 +1,61 @@
 package com.example.myapp.entities;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import androidx.annotation.NonNull;
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
 import java.util.Date;
 
-public class Provimi implements Parcelable {
+@Entity(tableName = "Provimi")
+public class Provimi {
 
+    @PrimaryKey(autoGenerate = true)
+    private int id;
+    @ColumnInfo(name="examName")
     private String examName;
+    @ColumnInfo(name="examPeriodId")
+    private int examPeriodId;
+    @ColumnInfo(name="examTime")
     private Date examTime;
 
-    public Provimi(String examName, Date examTime) {
+    public Provimi(String examName, int examPeriodId, Date examTime) {
         this.examName = examName;
+        this.examPeriodId = examPeriodId;
         this.examTime = examTime;
     }
 
     public Provimi() {
     }
 
-    public Provimi(Parcel in) {
-        this.examName = in.readString();
-        this.examTime = new Date(in.readLong());
+    public int getId() {
+        return id;
     }
 
-    @Override
-    public String toString() {
-        return "Provimi{" +
-                "examName='" + examName + '\'' +
-                ", examTime=" + examTime +
-                '}';
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getExamName() {
         return examName;
     }
 
-    public Date getExamTime() {
-        return examTime;
-    }
-
     public void setExamName(String examName) {
         this.examName = examName;
+    }
+
+    public int getExamPeriodId() {
+        return examPeriodId;
+    }
+
+    public void setExamPeriodId(int examPeriodId) {
+        this.examPeriodId = examPeriodId;
+    }
+
+    public Date getExamTime() {
+        return examTime;
     }
 
     public void setExamTime(Date examTime) {
         this.examTime = examTime;
     }
-
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(@NonNull Parcel parcel, int i) {
-        parcel.writeString(this.examName);
-        parcel.writeLong(this.examTime.getTime());
-    }
-
-    public static final Parcelable.Creator<Provimi> CREATOR = new Parcelable.Creator<Provimi>()
-    {
-        public Provimi createFromParcel(Parcel in)
-        {
-            return new Provimi(in);
-        }
-        public Provimi[] newArray(int size)
-        {
-            return new Provimi[size];
-        }
-    };
 }

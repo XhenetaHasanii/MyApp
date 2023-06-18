@@ -25,27 +25,73 @@
             android:layout_height="wrap_content"
             android:text="Universiteti i Prishtinës"
             android:gravity="center"
-            android:id="@+id/textViewUniversityName"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="HI"
-            android:layout_marginTop="100dp"
-            android:layout_gravity="center"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Kontakti"
-            android:layout_marginTop="100dp"
-            android:layout_gravity="center"/>
-
+            android:id="@+id/textViewUniversityName"
+            android:paddingTop="15dp"
+            android:paddingEnd="5dp"
+            android:textSize="22sp"
+            android:textStyle="bold"
+           />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="&quot;Hasan Prishtina&quot;"
+            android:text="&quot;HASAN PRISHTINA&quot;"
             android:gravity="center"
-            android:id="@+id/textViewFullName"/>
+            android:textStyle="bold"
+            android:id="@+id/textViewFullName"
+            android:textSize="16sp"/>
+
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Kontakti:"
+        android:textSize="14dp"
+        android:textStyle="bold"
+        android:layout_marginTop="500dp"
+        android:id="@+id/kontaktiTitull"
+        android:layout_marginLeft="25dp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="+38344430589"
+        android:textSize="14dp"
+        android:id="@+id/kontakti"
+        android:layout_marginLeft="25dp"
+        />
+    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Email:"
+        android:textSize="14dp"
+        android:textStyle="bold"
+        android:layout_marginTop="500dp"
+            android:layout_marginLeft="220dp"
+        android:id="@+id/kontaktiTitull1"
+
+        />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="rektorati@uni-pr.edu"
+            android:textSize="14dp"
+            android:layout_marginLeft="220dp"
+            android:id="@+id/emailKontakt"
+            />
+    </LinearLayout>
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -58,10 +104,7 @@
             android:background="@color/lavender"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             android:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/fragment_container"/>
+
 
     </LinearLayout>
 

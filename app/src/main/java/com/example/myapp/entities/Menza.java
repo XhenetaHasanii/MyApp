@@ -1,9 +1,20 @@
 package com.example.myapp.entities;
 
+
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity(tableName = "Menza")
 public class Menza {
 
+    @PrimaryKey(autoGenerate = true)
+    private int id;
+    @ColumnInfo(name = "emri")
     private String emri;
+    @ColumnInfo(name = "latitude")
     private String latitude;
+    @ColumnInfo(name = "longitude")
     private String longitude;
 
     public Menza(String emri, String latitude, String longitude) {
@@ -13,6 +24,14 @@ public class Menza {
     }
 
     public Menza() {
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getEmri() {

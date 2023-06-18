@@ -6,12 +6,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.example.myapp.helpers.CalendarUtils;
 import com.example.myapp.R;
 import com.example.myapp.entities.Event;
+import com.example.myapp.helpers.CalendarUtils;
 
 import java.util.List;
 

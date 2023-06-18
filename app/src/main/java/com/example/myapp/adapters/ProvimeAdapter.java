@@ -17,15 +17,15 @@ import com.example.myapp.entities.Provimi;
 
 import org.joda.time.DateTime;
 
-import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class ProvimeAdapter extends BaseAdapter {
     ProvimetActivity provimetActivity;
-    ArrayList<Provimi> periodExams;
+    List<Provimi> periodExams;
     Animation animation1;
 
-    public ProvimeAdapter(ProvimetActivity provimetActivity, ArrayList<Provimi> periodExams) {
+    public ProvimeAdapter(ProvimetActivity provimetActivity, List<Provimi> periodExams) {
         this.provimetActivity = provimetActivity;
         this.periodExams = periodExams;
 
