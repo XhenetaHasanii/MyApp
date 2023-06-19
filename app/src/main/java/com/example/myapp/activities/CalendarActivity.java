@@ -38,7 +38,7 @@ public class CalendarActivity extends  AppCompatActivity implements CalendarAdap
     }
 
     private void initWidgets() {
-        calendarRecyclerView = findViewById(R.id.calendarRecyclerView);
+        calendarRecyclerView = findViewById(R.id.calendarRecyclerViewMonth);
         monthYearText = findViewById(R.id.monthYearTV);
     }
 

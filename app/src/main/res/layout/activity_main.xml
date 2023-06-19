@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".activities.CalendarActivity">
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -12,12 +15,14 @@
         android:onClick="weeklyAction"
         android:backgroundTint="@color/lavender"
         android:layout_gravity="center"/>
+
     <LinearLayout
         android:layout_width="400sp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginBottom="22dp"
         android:layout_marginTop="22dp">
+
         <Button
             android:minHeight="0dp"
             android:minWidth="0dp"
@@ -41,6 +46,7 @@
             android:textAlignment="center"
             android:textColor="@color/blue"
             android:backgroundTint="@color/lavender"/>
+
         <Button
             android:minHeight="0dp"
             android:minWidth="0dp"
@@ -130,7 +136,7 @@
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/calendarRecyclerView"
+        android:id="@+id/calendarRecyclerViewMonth"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 

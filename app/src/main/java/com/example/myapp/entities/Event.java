@@ -1,48 +1,35 @@
 package com.example.myapp.entities;
 
-
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.ArrayList;
+
 
 public class Event {
-    public static ArrayList<Event> eventsList = new ArrayList<>();
 
-    public static ArrayList<Event> eventsForDate(LocalDate date) {
-        ArrayList<Event> events = new ArrayList<>();
+    private String eventName;
 
-        for (Event event : eventsList) {
-            if (event.getDate().equals(date))
-                events.add(event);
-        }
+    private LocalDate eventDate;
 
-        return events;
-    }
-
-
-    private final String name;
-    private final LocalDate date;
-    private final LocalTime time;
+    private LocalTime eventTime;
 
     public Event(String name, LocalDate date, LocalTime time) {
-        this.name = name;
-        this.date = date;
-        this.time = time;
+        this.eventName = name;
+        this.eventDate = date;
+        this.eventTime = time;
     }
 
-    public String getName() {
-        return name;
+    public Event() {
     }
 
-
-    public LocalDate getDate() {
-        return date;
+    public String getEventName() {
+        return eventName;
     }
 
-
-    public LocalTime getTime() {
-        return time;
+    public LocalDate getEventDate() {
+        return eventDate;
     }
 
-
+    public LocalTime getEventTime() {
+        return eventTime;
+    }
 }

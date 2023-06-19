@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.myapp.R;
 import com.example.myapp.adapters.CalendarAdapter;
 import com.example.myapp.adapters.EventAdapter;
+import com.example.myapp.db.AppDatabase;
 import com.example.myapp.dto.EventDTO;
 import com.example.myapp.entities.Event;
 import com.example.myapp.helpers.CalendarUtils;
@@ -25,6 +26,8 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.ZoneId;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 public class WeekViewActivity extends AppCompatActivity implements CalendarAdapter.OnItemListener {
@@ -33,41 +36,58 @@ public class WeekViewActivity extends AppCompatActivity implements CalendarAdapt
     private ListView eventListView;
     private List<EventDTO> eventDTOs;
 
+    private List<Event> allEvents;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_week_view);
 
-        eventDTOs = new ArrayList<>();
-        ArrayList<Event> dailyEvents = Event.eventsForDate(CalendarUtils.selectedDate);
+        allEvents = new ArrayList<>();
 
-        /*readData(new WeekViewActivity.FirestoreCallback(){
-            @Override
-            public void onCallback(List<EventDTO> list) {
-                for (int i = 0; i < list.size();++i){
-                    LocalDateTime tempDate = null;
-                    if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-                        tempDate = LocalDateTime.ofInstant(list.get(i).getOrari().toInstant(), ZoneId.systemDefault());
-                    }
-                    LocalDate temp2 = null;
-                    if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-                        temp2 = tempDate.toLocalDate();
-                    }
-                    LocalTime temp3 = null;
-                    if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-                        temp3 = tempDate.toLocalTime();
-                    }
-                    String tempName = list.get(i).getEmri();
-                        Event tempEvent = new Event(tempName,temp2,temp3);
-                        Event.eventsList.add(tempEvent);
-                        dailyEvents.add(tempEvent);
-                }
+        AppDatabase db = AppDatabase.getDbInstance(this.getApplicationContext());
+
+        Calendar calOne = Calendar.getInstance();
+        calOne.set(Calendar.YEAR, 2023);
+        calOne.set(Calendar.MONTH, Calendar.JUNE);
+        calOne.set(Calendar.DAY_OF_MONTH, 19);
+        Date testOne = calOne.getTime();
+
+        Calendar calTwo = Calendar.getInstance();
+        calTwo.set(Calendar.YEAR, 2023);
+        calTwo.set(Calendar.MONTH, Calendar.JUNE);
+        calTwo.set(Calendar.DAY_OF_MONTH, 20);
+        Date testTwo = calTwo.getTime();
+
+        EventDTO eventDTOone = new EventDTO("Ligjerate daa",testOne);
+        EventDTO eventDTOtwo = new EventDTO("Ushtrime databaze", testTwo);
+
+        db.eventDtoDao().insertEventDto(eventDTOone);
+        db.eventDtoDao().insertEventDto(eventDTOtwo);
+
+        eventDTOs = db.eventDtoDao().getAllEventDtos();
+
+        for (int i = 0; i < eventDTOs.size();++i){
+            LocalDateTime tempDate = null;
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                tempDate = LocalDateTime.ofInstant(eventDTOs.get(i).getEventDate().toInstant(), ZoneId.systemDefault());
+            }
+            LocalDate temp2 = null;
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                temp2 = tempDate.toLocalDate();
+            }
+            LocalTime temp3 = null;
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                temp3 = tempDate.toLocalTime();
+            }
+            String tempName = eventDTOs.get(i).getEventName();
+            Event tempEvent = new Event(tempName,temp2,temp3);
+            allEvents.add(tempEvent);
+        }
+
                 initWidgets();
                 setWeekView();
-            }
-        });
 
-*/
     }
 
     private void initWidgets() {
@@ -103,7 +123,7 @@ public class WeekViewActivity extends AppCompatActivity implements CalendarAdapt
     }
 
     private void setEventAdpater() {
-        ArrayList<Event> dailyEvents = Event.eventsForDate(CalendarUtils.selectedDate);
+        ArrayList<Event> dailyEvents = eventsForDate(CalendarUtils.selectedDate,allEvents);
         EventAdapter eventAdapter = new EventAdapter(getApplicationContext(), dailyEvents);
         eventListView.setAdapter(eventAdapter);
     }
@@ -112,6 +132,17 @@ public class WeekViewActivity extends AppCompatActivity implements CalendarAdapt
     public void onItemClick(int position, LocalDate date) {
         CalendarUtils.selectedDate = date;
         setWeekView();
+    }
+
+    public ArrayList<Event> eventsForDate(LocalDate date, List<Event> eventsList ) {
+        ArrayList<Event> events = new ArrayList<>();
+
+        for (Event event : eventsList) {
+            if (event.getEventDate().equals(date))
+                events.add(event);
+        }
+
+        return events;
     }
 
 }

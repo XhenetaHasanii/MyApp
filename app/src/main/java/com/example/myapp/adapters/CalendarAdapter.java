@@ -38,6 +38,7 @@ public class CalendarAdapter extends RecyclerView.Adapter<CalendarViewHolder> {
             layoutParams.height = (int) parent.getHeight();
 
         return new CalendarViewHolder(days, view, onItemListener);
+
     }
 
     @Override

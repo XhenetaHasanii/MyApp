@@ -1,39 +1,61 @@
 package com.example.myapp.dto;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 import java.util.Date;
+
+@Entity(tableName = "EventDto")
 public class EventDTO {
 
-    private String emri;
-    private Date orari;
+    @PrimaryKey(autoGenerate = true)
+    private int id;
 
-    public EventDTO(String name, Date orari) {
-        this.emri = name;
-        this.orari = orari;
+    @ColumnInfo(name ="eventName")
+    private String eventName;
+
+    @ColumnInfo(name = "eventDate")
+    private Date eventDate;
+
+
+    public EventDTO(String eventName, Date eventDate) {
+        this.eventName = eventName;
+        this.eventDate = eventDate;
     }
+
     public EventDTO() {
     }
 
-    public String getEmri() {
-        return emri;
+    public int getId() {
+        return id;
     }
 
-    public Date getOrari() {
-        return orari;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public void setEmri(String emri) {
-        this.emri = emri;
+    public String getEventName() {
+        return eventName;
     }
 
-    public void setOrari(Date orari) {
-        this.orari = orari;
+    public void setEventName(String eventName) {
+        this.eventName = eventName;
+    }
+
+    public Date getEventDate() {
+        return eventDate;
+    }
+
+    public void setEventDate(Date eventDate) {
+        this.eventDate = eventDate;
     }
 
     @Override
     public String toString() {
         return "EventDTO{" +
-                "emri='" + emri + '\'' +
-                ", orari=" + orari +
+                "id=" + id +
+                ", eventName='" + eventName + '\'' +
+                ", eventDate=" + eventDate +
                 '}';
     }
 }
