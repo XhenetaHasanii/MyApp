@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.myapp.R;
 import com.example.myapp.db.AppDatabase;
 import com.example.myapp.entities.Menza;
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
@@ -52,6 +53,7 @@ public class MensaMapsActivity  extends AppCompatActivity implements OnMapReadyC
             double lon = Double.parseDouble(menzat.get(i).getLongitude());
             LatLng menza = new LatLng(lat, lon);
             mMap.addMarker(new MarkerOptions().position(menza).title(menzat.get(i).getEmri()));
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(menza,15));
         }
     }
 
