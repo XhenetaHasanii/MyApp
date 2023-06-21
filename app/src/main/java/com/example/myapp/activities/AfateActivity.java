@@ -24,7 +24,7 @@ public class AfateActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.exam_period_list);
+        setContentView(R.layout.exam_period_dropmenu);
         autoCompleteTxt = findViewById(R.id.auto_complete_txt);
 
         AppDatabase db = AppDatabase.getDbInstance(this.getApplicationContext());

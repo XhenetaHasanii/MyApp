@@ -2,7 +2,9 @@ package com.example.myapp.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
@@ -66,6 +68,10 @@ public class ProvimetActivity extends AppCompatActivity {
         ProvimeAdapter adapter = new ProvimeAdapter(ProvimetActivity.this, provimet);
         ListView listView1 = (ListView) findViewById(R.id.exam_list);
         listView1.setAdapter(adapter);
+
+        LayoutInflater myinflater = getLayoutInflater();
+        ViewGroup myHeader = (ViewGroup)myinflater.inflate(R.layout.header_exams, listView1, false);
+        listView1.addHeaderView(myHeader, null, false);
         listView1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
