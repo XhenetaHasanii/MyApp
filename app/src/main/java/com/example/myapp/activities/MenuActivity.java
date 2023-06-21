@@ -3,14 +3,12 @@ package com.example.myapp.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-
 import com.example.myapp.R;
 import com.google.android.material.navigation.NavigationView;
 
@@ -58,6 +56,12 @@ public class MenuActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_mensa:
                 Intent menzat = new Intent(this, MensaMapsActivity.class);
                 startActivity(menzat);
+                break;
+
+            case R.id.nav_logout:
+                Intent loginScreen = new Intent(this, LoginActivity.class);
+                loginScreen.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(loginScreen);
                 break;
         }
         drawerLayout.closeDrawer(GravityCompat.START);

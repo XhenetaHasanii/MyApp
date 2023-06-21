@@ -3,10 +3,8 @@ package com.example.myapp.activities;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.myapp.R;
 import com.example.myapp.db.AppDatabase;
 import com.example.myapp.entities.Menza;
@@ -16,7 +14,6 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-
 import java.util.List;
 
 public class MensaMapsActivity  extends AppCompatActivity implements OnMapReadyCallback{
@@ -29,8 +26,6 @@ public class MensaMapsActivity  extends AppCompatActivity implements OnMapReadyC
         setContentView(R.layout.mensa_map);
 
         AppDatabase db = AppDatabase.getDbInstance(this.getApplicationContext());
-        Menza menza = new Menza("Menza e Konvikteve","42.655133248742494","21.164502724017698");
-        db.menzaDao().insertMenza(menza);
         menzat = db.menzaDao().getAllMenza();
 
 

@@ -5,9 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.myapp.R;
 import com.example.myapp.db.AppDatabase;
 import com.example.myapp.entities.Student;
@@ -28,10 +26,7 @@ public class ProfiliActivity extends AppCompatActivity {
         userEmail = intent.getStringExtra("userEmail");
 
         AppDatabase db = AppDatabase.getDbInstance(this.getApplicationContext());
-
-
         student = db.studentDao().getStudentByEmail(userEmail);
-
 
         TextView emri = findViewById(R.id.emri);
         TextView mbiemri = findViewById(R.id.mbiemri);

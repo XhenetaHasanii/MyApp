@@ -6,13 +6,10 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.myapp.R;
 import com.example.myapp.db.AppDatabase;
 import com.example.myapp.entities.Afati;
-
 import java.util.List;
 
 public class AfateActivity extends AppCompatActivity {

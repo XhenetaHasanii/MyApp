@@ -2,18 +2,14 @@ package com.example.myapp.activities;
 
 import static com.example.myapp.helpers.CalendarUtils.daysInWeekArray;
 import static com.example.myapp.helpers.CalendarUtils.monthYearFromDate;
-
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
-
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.myapp.R;
 import com.example.myapp.adapters.CalendarAdapter;
 import com.example.myapp.adapters.EventAdapter;
@@ -26,8 +22,6 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.ZoneId;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 public class WeekViewActivity extends AppCompatActivity implements CalendarAdapter.OnItemListener {
@@ -46,24 +40,6 @@ public class WeekViewActivity extends AppCompatActivity implements CalendarAdapt
         allEvents = new ArrayList<>();
 
         AppDatabase db = AppDatabase.getDbInstance(this.getApplicationContext());
-
-        Calendar calOne = Calendar.getInstance();
-        calOne.set(Calendar.YEAR, 2023);
-        calOne.set(Calendar.MONTH, Calendar.JUNE);
-        calOne.set(Calendar.DAY_OF_MONTH, 19);
-        Date testOne = calOne.getTime();
-
-        Calendar calTwo = Calendar.getInstance();
-        calTwo.set(Calendar.YEAR, 2023);
-        calTwo.set(Calendar.MONTH, Calendar.JUNE);
-        calTwo.set(Calendar.DAY_OF_MONTH, 20);
-        Date testTwo = calTwo.getTime();
-
-        EventDTO eventDTOone = new EventDTO("Ligjerate daa",testOne);
-        EventDTO eventDTOtwo = new EventDTO("Ushtrime databaze", testTwo);
-
-        db.eventDtoDao().insertEventDto(eventDTOone);
-        db.eventDtoDao().insertEventDto(eventDTOtwo);
 
         eventDTOs = db.eventDtoDao().getAllEventDtos();
 
