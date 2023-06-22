@@ -105,13 +105,13 @@ public class LoginActivity extends AppCompatActivity {
         Calendar calOne = Calendar.getInstance();
         calOne.set(Calendar.YEAR, 2023);
         calOne.set(Calendar.MONTH, Calendar.JUNE);
-        calOne.set(Calendar.DAY_OF_MONTH, 19);
+        calOne.set(Calendar.DAY_OF_MONTH, 23);
         Date testOne = calOne.getTime();
 
         Calendar calTwo = Calendar.getInstance();
         calTwo.set(Calendar.YEAR, 2023);
         calTwo.set(Calendar.MONTH, Calendar.JUNE);
-        calTwo.set(Calendar.DAY_OF_MONTH, 20);
+        calTwo.set(Calendar.DAY_OF_MONTH, 22);
         Date testTwo = calTwo.getTime();
 
         EventDTO eventDTOone = new EventDTO("Ligjerate daa",testOne);

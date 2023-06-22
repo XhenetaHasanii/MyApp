@@ -8,10 +8,12 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
+import org.junit.runners.*;
 import org.junit.Assert;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+import androidx.core.app.*;
+
+import com.example.myapp.db.AppDatabase;
 
 import java.io.IOException;
 
@@ -24,9 +26,8 @@ public class EventEntityTests {
 
     @Before
     public void createDb() {
-        Context context = ApplicationProvider.getApplicationContext();
-        db = Room.inMemoryDatabaseBuilder(context, TestDatabase.class).build();
-        userDao = db.getUserDao();
+        Context context = Application.getInstrumentation().getTargetContext()
+        db = AppDatabase.getDbInstance(this.getAppl);
     }
 
     @After
@@ -36,12 +37,13 @@ public class EventEntityTests {
 
     @Test
     public void writeUserAndReadInList() throws Exception {
-        User user = TestUtil.createUser(3);
+        /*User user = TestUtil.createUser(3);
         user.setName("george");
         userDao.insert(user);
         List<User> byName = userDao.findUsersByName("george");
         assertEquals(byName.get(0), equalTo(user));
-    }
-*/
 
+
+    }
+ */
 }
