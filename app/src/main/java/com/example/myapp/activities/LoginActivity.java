@@ -59,14 +59,14 @@ public class LoginActivity extends AppCompatActivity {
 
         db.clearAllTables();
         db.generalDao().resetSequenceTable();
-        Student student = new Student("test", "test", "test", 1991232, "test", 3, "xheneta.hasani@gmail.com", 044122111, "044567767", "testParent");
+        Student student = new Student("Xheneta", "Hasani", "01.12.1998", 1243729153, "Pjeter Bogdani", 3, "xheneta.hasani@gmail.com", 044122111, "044567767", "Sherafedin");
         db.studentDao().insertStudent(student);
 
-        Afati afatiOne = new Afati("Janar");
-        Afati afatiTwo = new Afati("Prill");
-        Afati afatiThree = new Afati("Qershor");
-        Afati afatiFour = new Afati("Shtator");
-        Afati afatiFive = new Afati("Nentor");
+        Afati afatiOne = new Afati("Janari");
+        Afati afatiTwo = new Afati("Prilli");
+        Afati afatiThree = new Afati("Qershori");
+        Afati afatiFour = new Afati("Shtatori");
+        Afati afatiFive = new Afati("Nëntori");
         db.afatiDao().insertAfat(afatiOne);
         db.afatiDao().insertAfat(afatiTwo);
         db.afatiDao().insertAfat(afatiThree);
