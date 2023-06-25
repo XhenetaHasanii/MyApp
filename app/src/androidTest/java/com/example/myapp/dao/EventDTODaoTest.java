@@ -10,8 +10,6 @@ import androidx.test.filters.SmallTest;
 
 import com.example.myapp.db.AppDatabase;
 import com.example.myapp.dto.EventDTO;
-import com.example.myapp.entities.Menza;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
