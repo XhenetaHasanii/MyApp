@@ -119,6 +119,7 @@ public class LoginActivity extends AppCompatActivity {
 
         db.eventDtoDao().insertEventDto(eventDTOone);
         db.eventDtoDao().insertEventDto(eventDTOtwo);
+        db.close();
     }
 
 }
