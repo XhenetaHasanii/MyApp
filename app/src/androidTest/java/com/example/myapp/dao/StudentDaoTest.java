@@ -37,11 +37,30 @@ public class StudentDaoTest {
     @Test
     public void writeAndReadStudentTest(){
 
-        Student student = new Student("testFirstName", "test", "test", 1991232, "test", 3, "xheneta.hasani@gmail.com", 044122111, "044567767", "testParent");
+        Student student = new Student("testFirstName", "test", "test", 1991232, "test", 3, "test@email.com", 044122111, "testpassword", "testParent");
         studentDao.insertStudent(student);
         List<Student> byName = studentDao.getAllStudents();
         assertEquals("testFirstName",byName.get(0).getFirstName());
     }
 
+    @Test
+    public void getStudentByEmailTest(){
+        Student student = new Student("testFirstName", "test", "test", 1991232, "test", 3, "test@email.com", 044122111, "testpassword", "testParent");
+        studentDao.insertStudent(student);
+
+        Student returnStudent = studentDao.getStudentByEmail("test@email.com");
+        assertEquals("test@email.com",returnStudent.getEmail());
+
+    }
+
+    @Test
+    public void getStudentByEmailAndPasswordTest(){
+        Student student = new Student("testFirstName", "testLastName", "test", 1991232, "test", 3, "test@email.com", 044122111, "testpassword", "testParent");
+        studentDao.insertStudent(student);
+
+        Student returnStudent = studentDao.getStudentByEmailAndPassword("test@email.com","testpassword");
+        assertEquals("testLastName",returnStudent.getLastName());
+
+    }
 
 }
