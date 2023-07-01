@@ -16,7 +16,6 @@
                 android:drawableLeft="@drawable/baseline_arrow_back_24"
                 android:textColor="@color/white"
                 android:textSize="20sp"
-                android:textStyle="bold"
                 android:text="Profili"
                 android:layout_gravity="center"/>
 
@@ -39,8 +38,9 @@
             android:layout_gravity="center"
             android:text="Të dhënat personale të studentit"
             android:textColor="@color/lavender"
-            android:textSize="23sp"
-            android:layout_marginBottom="18dp"/>
+            android:textSize="18sp"
+            android:layout_marginBottom="18dp"
+            android:textStyle="bold"/>
 
 
         <LinearLayout
@@ -58,20 +58,18 @@
                     android:id="@+id/emri_titull"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
+                    android:layout_marginStart="19dp"
                     android:layout_marginTop="16dp"
                     android:text="Emri"
-                    android:textAllCaps="false"
-                    android:textStyle="bold"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
 
                 <TextView
                     android:id="@+id/emri"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:textColor="@android:color/black"
-                    android:textSize="20dp" />
+                    android:layout_marginStart="19dp"
+                    android:textSize="18sp" />
 
             </LinearLayout>
 
@@ -85,20 +83,18 @@
                     android:id="@+id/mbiemri_titull"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
+                    android:layout_marginStart="19dp"
                     android:layout_marginTop="16dp"
                     android:text="Mbiemri"
                     android:textStyle="bold"
-                    android:textAllCaps="false"
-                    android:textSize="18dp"/>
+                    android:textSize="18sp"/>
 
                 <TextView
                     android:id="@+id/mbiemri"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:textColor="@android:color/black"
-                    android:textSize="20dp" />
+                    android:layout_marginStart="19dp"
+                    android:textSize="18sp" />
 
             </LinearLayout>
 
@@ -119,20 +115,18 @@
                     android:id="@+id/datelindja_titull"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
+                    android:layout_marginStart="19dp"
                     android:layout_marginTop="16dp"
                     android:text="Datëlindja"
-                    android:textAllCaps="false"
                     android:textStyle="bold"
-                    android:textSize="18dp" />
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/datelindja"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:textColor="@android:color/black"
-                    android:textSize="20dp" />
+                    android:layout_marginStart="19dp"
+                    android:textSize="18sp" />
 
             </LinearLayout>
 
@@ -146,20 +140,19 @@
                     android:id="@+id/nrPersonal_titull"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
+                    android:layout_marginStart="19dp"
                     android:layout_marginTop="16dp"
                     android:text="Numri personal"
-                    android:textStyle="bold"
                     android:textAllCaps="false"
-                    android:textSize="18dp"/>
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
 
                 <TextView
                     android:id="@+id/nrPersonal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:textColor="@android:color/black"
-                    android:textSize="20dp" />
+                    android:layout_marginStart="19dp"
+                    android:textSize="18sp" />
 
             </LinearLayout>
 
@@ -181,20 +174,18 @@
                     android:id="@+id/vitiStudimeve_titull"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
+                    android:layout_marginStart="19dp"
                     android:layout_marginTop="16dp"
                     android:text="Viti i Studimeve"
-                    android:textAllCaps="false"
-                    android:textStyle="bold"
-                    android:textSize="18dp" />
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
 
                 <TextView
                     android:id="@+id/vitiStudimeve"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:textColor="@android:color/black"
-                    android:textSize="20dp" />
+                    android:layout_marginStart="19dp"
+                    android:textSize="18sp" />
 
             </LinearLayout>
 
@@ -206,21 +197,19 @@
 
                 <TextView
                     android:id="@+id/email_titull"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
+                    android:layout_marginStart="19dp"
                     android:layout_marginTop="16dp"
                     android:text="Email"
                     android:textStyle="bold"
-                    android:textAllCaps="false"
-                    android:textSize="18dp"/>
+                    android:textSize="18sp"/>
                 <TextView
                     android:id="@+id/email"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:textColor="@android:color/black"
-                    android:textSize="20dp" />
+                    android:layout_marginStart="19dp"
+                    android:textSize="18sp" />
             </LinearLayout>
 
         </LinearLayout>
@@ -239,10 +228,9 @@
                     android:id="@+id/adresa_titull"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
+                    android:layout_marginStart="19dp"
                     android:layout_marginTop="16dp"
                     android:text="Adresa"
-                    android:textAllCaps="false"
                     android:textStyle="bold"
                     android:textSize="18dp" />
 
@@ -250,8 +238,7 @@
                     android:id="@+id/adresa"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:textColor="@android:color/black"
+                    android:layout_marginStart="19dp"
                     android:textSize="20dp" />
 
             </LinearLayout>
@@ -266,19 +253,17 @@
                     android:id="@+id/tel_titull"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
+                    android:layout_marginStart="19dp"
                     android:layout_marginTop="16dp"
                     android:text="Numri i telefonit"
-                    android:textStyle="bold"
-                    android:textAllCaps="false"
-                    android:textSize="18dp"/>
+                    android:textSize="18dp"
+                    android:textStyle="bold"/>
 
                 <TextView
                     android:id="@+id/tel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:textColor="@android:color/black"
+                    android:layout_marginStart="19dp"
                     android:textSize="20dp" />
 
             </LinearLayout>
