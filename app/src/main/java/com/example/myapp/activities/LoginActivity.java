@@ -129,7 +129,7 @@ public class LoginActivity extends AppCompatActivity {
         septemberCalendar.set(Calendar.HOUR_OF_DAY,9);
         septemberCalendar.set(Calendar.MINUTE,00);
         septemberCalendar.set(Calendar.SECOND,0);
-        Date septemberDate = juneCalendar.getTime();
+        Date septemberDate = septemberCalendar.getTime();
         Provimi provimiOneShtator = new Provimi("Dizajni dhe Analiza e Algoritmeve",4,septemberDate);
         Provimi provimiTwoShtator = new Provimi("Mikroprocesore dhe Mikrokontrollere",4,septemberDate);
         Provimi provimiThreeShtator = new Provimi("Programimi I",4,septemberDate);
@@ -144,7 +144,7 @@ public class LoginActivity extends AppCompatActivity {
         novemberCalendar.set(Calendar.HOUR_OF_DAY,9);
         novemberCalendar.set(Calendar.MINUTE,00);
         novemberCalendar.set(Calendar.SECOND,0);
-        Date novemberDate = juneCalendar.getTime();
+        Date novemberDate = novemberCalendar.getTime();
         Provimi provimiOneNentor = new Provimi("Dizajni dhe Analiza e Algoritmeve",5,novemberDate);
         Provimi provimiTwoNentor = new Provimi("Mikroprocesore dhe Mikrokontrollere",5,novemberDate);
         Provimi provimiThreeNentor = new Provimi("Programimi I",5,novemberDate);
