@@ -6,7 +6,7 @@
      android:id="@+id/title_text"
      android:layout_width="match_parent"
      android:layout_height="wrap_content"
-     android:text="Provimi dhe orari i mbajtjes se provimit"
+     android:text="Provimi dhe orari i mbajtjes së provimit"
      android:textAllCaps="false"
      android:textAlignment="center"
      android:textSize="20sp"
